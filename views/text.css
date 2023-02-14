@@ -1,0 +1,41 @@
+but {
+    font-family:'Comic Sans';
+}
+logo {
+    font-family:'Comic Sans';
+    font-size: 30px ;
+}
+co {
+    font-family:'Comic Sans';
+    font-size: 30px ;
+    text-align: center;
+}
+.img1{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.card_room{
+    font-family:'Comic Sans';
+    font-size: 20px ;
+    text-align: left;
+    color:darkgreen;
+}
+.nav-item {
+    margin-top: 5px; 
+}
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem; 
+}
+.nav-link:hover, .nav-link:focus {
+      text-decoration: none; 
+}
+.nav-link.disabled {
+      color: #6c757d;
+      pointer-events: none;
+      cursor: default; 
+}
+.navbar-custom {
+        background-color: rgb(114, 253, 114);
+    }
