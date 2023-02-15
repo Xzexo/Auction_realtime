@@ -24,22 +24,24 @@ router.get('/register',(req,res)=>{
 })
 
 //DB
-//router.post('/register_db',(req,res)=>{
-//    console.log(req.body);
-//    let data = new User({
-        //user_id:
-//        username:req.body.username,
-//        first_name:req.body.firstname,
-//        last_name:req.body.lastname,
-//        critizen_id:req.body.critizenID,
-//        email:req.body.email,
-//        passwd:req.body.passwd,
-//        phone:req.body.phone,
-        //user_type:
+router.post('/register_db',(req,res)=>{
+    console.log(req.body);
+    let data = new User({
+//        user_id:,
+        username:req.body.username,
+        first_name:req.body.firstname,
+        last_name:req.body.lastname,
+        critizen_id:req.body.critizenID,
+        email:req.body.email,
+        passwd:req.body.passwd,
+        phone:req.body.phone,
+//        user_type:
 
- //   })
- //   console.log(data);
- //   res.render('register')
-//})
+    })
+    User.saveUser(data,(err)=>{
+        if(err) console.log(err)
+        res.redirect('/')
+    })
+})
 
 module.exports = router

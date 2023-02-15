@@ -32,6 +32,6 @@ let User = mongoose.model("user",userSchema)
 module.exports = User
 
 //save document(data)
-//module.exports.saveUser=function(model,document){
- //   model.save(document)
-//}
+module.exports.saveUser=function(model,document){
+   model.save(document)
+}
