@@ -26,6 +26,14 @@ let userSchema = mongoose.Schema({
     user_type:String
 })
 
+let itemSchema = mongoose.Schema({
+
+})
+
+let roomSchema = mongoose.Schema({
+    
+})
+
 //create model
 let User = mongoose.model("user",userSchema)
 
