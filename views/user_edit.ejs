@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Bidlersegde</title>
+<!--Bootstrap Carousel-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Bootstrap Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+ <!--Bootstrap CSS-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+ integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+ integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+ integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+ integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+ integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="text.css">
+
+<head>
+  <nav class="navbar navbar-dark bg-dark">
+    <!-- Logo and Brand -->
+    <a class="navbar-brand" href="/users">
+        <img src="image/icon.png" width="50" height="   50" class="d-inline-block align-center ml-4 mr-2" alt="">
+        <logo>Bidlersegde</logo>
+    </a>
+    <ul class="nav navbar-dark bg-dark">
+    <li class="nav-item"> <a href="/user_edit" class="nav-link"></a></li>
+       </li>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item"><a class="navbar-brand" href="cart.php"><img src="image/Cart.png"  width="40" height="35"></a>
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item mr-2"><a href="/" class="btn btn-custom" >Sign out</a></li>
+    </ul>
+  </nav>
+</head> 
+
+	<!-- Login Section -->
+	<div class="row mt-5">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<div class="card-wrapper">
+				<div class="card fat">
+					<div class="card-body">
+						<h4 class="card-title">Edit Profile</h4>
+						<!-- Login -->
+				
+                        <form action="/user" method="post">
+							<div class="form-group">
+								<label>Firstname</label>
+                                <input type="text" name="first_name"  class="form-control" value="<?php echo $users["first_name"] ?>">
+							
+							</div>
+							<div class="form-group">
+								<label>Lastname</label>
+								<input type="text" name="last_name"  class="form-control" value="<?php echo $users["last_name"] ?>">
+							</div>
+							
+							<div class="form-group">
+								<label>Email</label>
+								<input type="text" name="email"  class="form-control" value="<?php echo $users["email"] ?>">
+							</div>
+							<div class="form-group">
+								<label>Phone Number</label>
+								<input type="text" name="phone"  class="form-control" value="<?php echo $users["phone"] ?>">
+							</div>
+							
+							
+							<input type="submit" class="btn btn-dark" value="submit" name='submit'>
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+		<div class="navbar bg-dark py-3 mt-5">
+			<div class="container">
+				<div class="col-md-12 text-center">
+					<p class="mb-0 text-white">Bidlersegde</p>
+				</div>
+			</div>
+		</div>
+
+
+</body>
+
+</html>

@@ -35,9 +35,9 @@
 <body>
 
 <div class="topnav">
-  <a href="/home">Home</a>
-  <a class="nav-link btn-custom1" href="/regiter_item">Register Items</a>
-  <a class="nav-link btn-custom1" href="/reserve_room">Book Rooms</a>
+  <a href="/users">Home</a>
+  <a class="nav-link btn-custom1" href="/register_item">Register Items</a>
+  <a class="nav-link btn-custom1" href="/room">Book Rooms</a>
   <div class="search-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
@@ -47,10 +47,6 @@
 </div>
 
 <div class="content">
-    <?php $query = "SELECT * FROM rooms";  
-        $result = mysqli_query($mysqli, $query) or die (mysqli_error($mysqli));  
-        while ($row = mysqli_fetch_assoc($result)) {
-          ?>
       <fieldset style="border-radius: 0px; background-color: #96DAA6;">
         <!-- <legend>Choose:</legend> -->
           <div class="row">

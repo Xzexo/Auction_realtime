@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="mystyle.css">
+<style type="text/css">
+.month {
+  padding: 25px 25px;
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 12.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 12.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/users">Auction Rooms</a>
+  <a class="nav-link btn-custom1" href="/register_item" ></li>Register Items</a>
+  <a class="nav-link btn-custom1" href="/room" ></li>Book Rooms</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div class="content">
+  <fieldset style="border-radius: 9px; background-color: #96DAA6;">
+    <legend>Choose:</legend>
+
+    <div class="row">
+      <div class="column left-35">
+      </div>
+      <div class="column right-65">
+        <form  action="/"  method="post">
+        <div class="row">
+          <label for="fname" style="margin-left: 10px; margin-right: 41px;">Time Open:</label>
+          <input type="time" id="fname" name="time_open" value="John">
+        </div>
+        <div class="row">
+          <label for="fname" style="margin-left: 10px; margin-right: 40px;">Time Close:</label>
+          <input type="time" id="fname" name="time_close" value="John">
+        </div>
+        <div class="row">
+          <label for="fname" style="margin-left: 10px; margin-right: 38px;">Time Finish:</label>
+          <input type="time" id="fname" name="time_finish" value="John">
+        </div>
+        <div class="row">
+          <label for="fname" style="margin-left: 10px; margin-right: 41px;">Date:</label>
+          <input type="date" id="dateofbirth" name="date" value="John">
+        </div>
+        <div class="row">
+          <label for="fname" style="margin-left: 10px; margin-right: 20px;">Choose Items:</label>
+          <select name="cars" id="cars" >
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        
+        <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Submit" >
+        </form>
+      </div>
+    </div>
+
+  </fieldset>
+
+
+</div>
+
+
+</body>
+</html>

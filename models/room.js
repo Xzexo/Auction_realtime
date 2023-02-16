@@ -14,25 +14,21 @@ mongoose.connect(dbUrl,{
 
 
 //Schema
-let userSchema = mongoose.Schema({
-   // user_id:Number,
-    username:String,
-    first_name:String,
-    last_name:String,
-    critizen_id:Number,
-    email:String,
-    passwd:String,
-    phone:Number,
-    user_type:String
-});
+let roomSchema = mongoose.Schema({
+    //room_id:Number,
+    time_open:String,
+    time_close_door:String,
+    time_finish:String,
+    auction_day:Date
+})
 
 //create model
-let User = mongoose.model("user",userSchema);
+let Room = mongoose.model("room",roomSchema)
 
 //export model
-module.exports = User;
+module.exports = Room
 
 //save document(data)
-module.exports.saveUser=function(model,document){
+module.exports.saveRoom=function(model,document){
    model.save(document)
 }

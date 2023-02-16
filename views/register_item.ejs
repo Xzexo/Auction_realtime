@@ -25,9 +25,9 @@
 <body>
   <!--Top-->
   <div class="topnav">
-    <a href="/home">Home</a>
-    <a class="nav-link btn-custom1" href="/regiter_item">Register Items</a>
-    <a class="nav-link btn-custom1" href="/reserve_room">Book Rooms</a>
+    <a href="/users">Home</a>
+    <a class="nav-link btn-custom1" href="/register_item">Register Items</a>
+    <a class="nav-link btn-custom1" href="/room">Book Rooms</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -41,7 +41,7 @@
       <legend>Item Information:</legend>
       
       <!--update database-->
-      <form  action="regisitem.php" enctype="multipart/form-data" method="post">
+      <form  action="/register_item_db" method="post">
         <div class="container">
           <div class="row">
 
@@ -132,16 +132,16 @@
           </div>
         </div>
       
-    </fieldset>
-  </div>
+        </fieldset>
+        </div>
 
-  <div class="col border-end d-flex justify-content-center align-items-end">
-    <div class="column">
-      <input class="btn btn-primary" type="submit" value="More">
-      <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Submit" >
-    </div>  
-  </div>  
-  </form>  
+        <div class="col border-end d-flex justify-content-center align-items-end">
+          <div class="column">
+          <!--<input class="btn btn-primary" type="submit" value="More">-->
+          <input class="btn btn-primary" type="submit" name="submit" value="submit" >
+          </div>  
+        </div>  
+      </form>  
 <script src="js/bootstrap.min.js"></script>   
 
 
