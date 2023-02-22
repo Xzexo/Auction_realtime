@@ -8,9 +8,28 @@ const User = require('../models/user')
 const Item = require('../models/item')
 const Room = require('../models/room')
 
+//upload file
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+    destination:function(req,file,cb){
+        cb(null,'.views/image/item')
+    },
+    filename:function(req,file,cb){
+        cb(null,Date.now()+".jpg")// change name file
+    }
+})
+
+// Start upload
+const upload = multer({
+    storage:storage
+})
+
 
 router.get("/",(req,res)=>{
-    res.render('index.ejs')
+    Room.find().exec((err,doc)=>{
+        res.render('index.ejs',{room:doc})
+    })
 })
 
 router.get("/register_item",(req,res)=>{

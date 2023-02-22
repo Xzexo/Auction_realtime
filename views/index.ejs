@@ -128,12 +128,22 @@
           </nav>
         </div>
     <!-- Room -->
-
-    <div class="card text-white bg-dark py-3 text-center">
-     <div class="card-body">
-        <h2 style="font-family:'Comic Sans'; font-size: 25px ;" >Auction Room</h2>
+<% Object.values(room).forEach(function(room){%>
+    <div class ='col-lg-4 col-md-6 mb-4'>
+      <div class="card h-100">
+        <a href="#"></a>
+        <div class="'card-body">
+          <h4 class="card-title">
+              <a href="#"> Time open: <%= room.time_open%></a>
+          </h4>
+          <h5>Time open: <%= room.time_open%></h5>
+          <h6>Time close: <%= room.time_close_door%></h6>
+          <h7>Time finish: <%= room.time_finish%></h7>
+          <h8>Date: <%= room.auction_day%></h8>
+        </div>
+      </div>
     </div>
-
+<% }) %>
     <!-- Concerts -->
     <div class="album py-5 bg-light">
       <div class="container">
