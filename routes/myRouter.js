@@ -2,6 +2,9 @@ const { query } = require('express')
 const express = require('express')
 const router = express.Router()
 const path = require('path')
+const cookieSession = require('cookie-session')
+const bcrypt = require('bcrypt')
+const {body, validationResult} = require('express-validator')
 
 //call model
 const User = require('../models/user')
@@ -46,8 +49,21 @@ router.get("/book_room",(req,res)=>{
 router.get('/register',(req,res)=>{
     res.render('register.ejs')
 })
-router.get('/users',(req,res)=>{
-    res.render('users.ejs')
+router.post('/check',(req,res)=>{
+    const user_name = req.body.username
+    const pass_wd = req.body.passwd
+    const timeExpire = 1000000 // 1000 sec
+    if (user_name === "admin" && pass_wd === "123"){
+        req.session.username = user_name
+        req.session.password = pass_wd
+        req.session.login = true
+        req.session.cookie.maxAge = timeExpire
+        res.redirect('/admin')
+    }else{ 
+        res.redirect('/login')
+
+    }
+
 })
 router.get('/user_edit',(req,res)=>{
     res.render('user_edit.ejs')
@@ -62,11 +78,18 @@ router.get('/login',(req,res)=>{
     res.render('login.ejs')
 })
 
+router.get("/:id",(req,res)=>{
+    const room_id = req.params.id
+    Room.findOne({_id:room_id}).exec((err,doc)=>{
+        res.render('before.ejs',{room:doc})
+    })
+})
+
+
 //DB
 router.post('/register_db',(req,res)=>{
     console.log(req.body);
     let data = new User({
-//        user_id:,
         username:req.body.username,
         first_name:req.body.firstname,
         last_name:req.body.lastname,

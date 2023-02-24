@@ -114,7 +114,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link btn-custom1" aria-current="page" href="/" >Auction Rooms</a>
+                    <a class="nav-link btn-custom1" aria-current="page" href="/login" >Auction Rooms</a>
                   </li>&nbsp;&nbsp;&nbsp;
                   <li class="nav-item">
                     <a class="nav-link btn-custom1" href="/login">Register Items</a>
@@ -134,7 +134,7 @@
         <a href="#"></a>
         <div class="'card-body">
           <h4 class="card-title">
-              <a href="#"> Time open: <%= room.time_open%></a>
+              <a href="/<%= room._id%>"> Time open: <%= room.time_open%></a>
           </h4>
           <h5>Time open: <%= room.time_open%></h5>
           <h6>Time close: <%= room.time_close_door%></h6>
