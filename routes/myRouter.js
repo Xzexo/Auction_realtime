@@ -49,17 +49,25 @@ router.get("/book_room",(req,res)=>{
 router.get('/register',(req,res)=>{
     res.render('register.ejs')
 })
-router.post('/check',(req,res)=>{
+router.post('/check',async (req,res)=>{
     const user_name = req.body.username
     const pass_wd = req.body.passwd
-    const timeExpire = 1000000 // 1000 sec
+    const timeExpire = 1000000 
+    //Find username and password in DB
+    const user = await User.findOne({
+        username : user_name,
+        passwd : pass_wd
+    })
     if (user_name === "admin" && pass_wd === "123"){
         req.session.username = user_name
         req.session.password = pass_wd
         req.session.login = true
         req.session.cookie.maxAge = timeExpire
         res.redirect('/admin')
-    }else{ 
+    }else if(user){
+        return res.render('users.ejs',{user})
+    }
+    else{ 
         res.redirect('/login')
 
     }
@@ -86,7 +94,9 @@ router.get("/:id",(req,res)=>{
 })
 
 
-//DB
+
+
+//DataBase
 router.post('/register_db',(req,res)=>{
     console.log(req.body);
     let data = new User({
@@ -97,7 +107,6 @@ router.post('/register_db',(req,res)=>{
         email:req.body.email,
         passwd:req.body.passwd,
         phone:req.body.phone,
-//        user_type:
 
     })
     User.saveUser(data,(err)=>{
@@ -109,7 +118,6 @@ router.post('/register_db',(req,res)=>{
 router.post('/register_item_db',(req,res)=>{
     console.log(req.body);
     let data = new Item({
-//        item_id:,
         item_name:req.body.item_name,
         item_description:req.body.item_descrip,
         item_begin_price:req.body.begin_price,
@@ -129,7 +137,6 @@ router.post('/register_item_db',(req,res)=>{
 router.post('/open_room_db',(req,res)=>{
     console.log(req.body);
     let data = new Room({
-//        room_id:,
         time_open:req.body.time_open,
         time_close_door:req.body.time_close_door,
         time_finish:req.body.time_finish,
