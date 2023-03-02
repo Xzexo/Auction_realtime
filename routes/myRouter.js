@@ -6,12 +6,12 @@ const cookieSession = require('cookie-session')
 const bcrypt = require('bcrypt')
 const {body, validationResult} = require('express-validator')
 
-//call model
+//!call model
 const User = require('../models/user')
 const Item = require('../models/item')
 const Room = require('../models/room')
 
-//upload file
+//!upload file
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
     }
 })
 
-// Start upload
+//!Start upload
 const upload = multer({
     storage:storage
 })
@@ -53,7 +53,7 @@ router.post('/check',async (req,res)=>{
     const user_name = req.body.username
     const pass_wd = req.body.passwd
     const timeExpire = 1000000 
-    //Find username and password in DB
+    //!Find username and password in DB
     const user = await User.findOne({
         username : user_name,
         passwd : pass_wd
@@ -96,7 +96,7 @@ router.get("/:id",(req,res)=>{
 
 
 
-//DataBase
+//!DataBase
 router.post('/register_db',(req,res)=>{
     console.log(req.body);
     let data = new User({
