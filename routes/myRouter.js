@@ -65,7 +65,9 @@ router.post('/check',async (req,res)=>{
         req.session.cookie.maxAge = timeExpire
         res.redirect('/admin')
     }else if(user){
-        return res.render('users.ejs',{user})
+        Room.find().exec((err,doc)=>{
+            res.render('users.ejs',{room:doc})
+        })
     }
     else{ 
         res.redirect('/login')
@@ -84,6 +86,9 @@ router.get('/admin_add',(req,res)=>{
 })
 router.get('/login',(req,res)=>{
     res.render('login.ejs')
+})
+router.get('/auction',(req,res)=>{
+    res.render('auction.ejs')
 })
 
 router.get("/:id",(req,res)=>{

@@ -136,50 +136,31 @@
           </nav>
         </div>
     <!-- Room -->
-
-    <div class="card card-custom">
-     <div class="card-body">
-        <h2 style="font-family:'Comic Sans'; font-size: 25px ;" >Auction Room</h2>
+<% Object.values(room).forEach(function(room){%>
+  <div class ='col-lg-4 col-md-6 mb-4'>
+    <div class="card h-100">
+      <a href="#"></a>
+      <div class="'card-body">
+        <h4 class="card-title">
+            <a href="/<%= room._id%>"> Time open: <%= room.time_open%></a>
+        </h4>
+        <h5>Time open: <%= room.time_open%></h5>
+        <h6>Time close: <%= room.time_close_door%></h6>
+        <h7>Time finish: <%= room.time_finish%></h7>
+        <a href="/auction" class="btn btn-custom" >Join</a>
+      </div>
     </div>
-
-    <!-- Concerts -->
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm" >
-            
-            <img src="image/auction_room.jpg" class="card-img-top" style="height: 300px; width: 100%; display: block;" class="img-thumnail" data-holder-rendered="true" />  </td>
-                 
-              <div class="card-body">
-              <p class="card_room">Room Number :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p class="card_room">Seller :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p class="card_room">Items :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p class="card_room">Time Open :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-                <p class="card_room">Time Close :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p class="card_room">Time Finish :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <p class="card_room">Date :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <div class="d-flex justify-content-center align-items-center">
-                  <div class="btn-group">
-                  
-                  </div>
-                 
-                </div>
-              </div>
+  </div>
+<% }) %>
+  <!-- Concerts -->
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm" >
               
-            </div>
-          </div>
-
-    <!-- Album div -->
   </div> <!-- Container div -->
 </body>
 
 <!-- Footer -->
-<div class="navbar bg-   py-3 mt-5">
-			<div class="container">
-				<div class="col-md-12 text-center">
-					<p class="mb-0 text-white">Bidlersegde</p>
-				</div>
-			</div>
-		</div>
 </html>
