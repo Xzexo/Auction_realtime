@@ -1,0 +1,142 @@
+
+/* ====================== [ Start Typography  ] ====================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+}
+
+html {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+    color: #fff;
+    background: #111215;
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-x: hidden !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+span, a, a:hover {
+  display: inline-block;
+  color: inherit;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+p {
+  color: $pcolor;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2;
+  margin: 0;
+}
+
+a, span{
+  display: inline-block;
+  
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.container{
+  max-width: 1200px;
+}
+
+.custom-font{
+	font-family: 'Poppins', sans-serif;
+}
+
+.color-font{
+  background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.back-color{
+  background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+}
+
+
+.line{
+  position: absolute;
+  height: 1px;
+  width: 65%;
+  background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+
+  &.top{
+    top: 0;
+  }
+
+  &.bottom{
+    bottom: 0;
+  }
+
+  &.left{
+    left: 0;
+  }
+
+  &.right{
+    right: 0;
+  }
+}
+
+.line-v{
+    position: absolute;
+    height: 80px;
+    width: 1px;
+    background: #c5a47e;
+    left: 50%;
+    opacity: .3;
+
+    &.top{
+        top: -30px;
+    }
+
+    &.bottom{
+        bottom: -30px;
+    }
+}
+
+/* ====================== [ End Typography  ] ====================== */

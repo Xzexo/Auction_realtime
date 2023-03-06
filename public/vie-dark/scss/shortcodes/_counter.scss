@@ -1,0 +1,146 @@
+
+
+/* ====================== [ Start Numbers & Counter  ] ====================== */
+
+.number-sec{
+
+	.item{
+		text-align: center;
+		padding: 0 25px;
+
+		.icon{
+			opacity: .8;
+			font-size: 70px;
+			margin-bottom: 40px;
+		}
+
+		h3{
+			font-weight: 200;
+			letter-spacing: 2px;
+			margin-bottom: 15px;
+		}
+	}
+
+    .container.sub-bg{
+        padding: 0 50px;
+        border-radius: 30px;
+        background: rgba(24,25,29,.5);
+        backdrop-filter: blur(10px);
+
+        .item{
+            padding: 50px 0;
+            border-right: 1px solid #0d0e0f;
+
+            &.no-bord{
+                border: 0;
+            }
+        }
+    }
+}
+
+.video{
+    position: relative;
+    min-height: 80vh;
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top,rgba(0,0,0,.2) 0%,rgba(43,47,53,.7) 100%);
+        background-repeat: repeat-x;
+    }
+
+    .vid{
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+        text-align: center;
+        z-index: 8;
+
+        .vid-butn{
+            width: 100%;
+
+            &:hover{
+
+                .icon{
+                    color: #fff;
+
+                    &:before{
+                        transform: scale(0);
+                    }
+                }
+            }
+            
+            .icon{
+                color: #fff;
+                width: 130px;
+                height: 130px;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                line-height: 130px;
+                text-align: center;
+                font-size: 30px;
+                position: relative;
+                transition: all .5s;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    bottom: 5px;
+                    right: 5px;
+                    left: 5px;
+                    background: #fff;
+                    border-radius: 50%;
+                    z-index: -1;
+                    transition: all .5s cubic-bezier(1, 0, 0, 1);
+					opacity: 0;
+                }
+            }
+        }
+    }
+
+    .container{
+        position: relative;
+        height: 80vh;
+        padding: 80px 0;
+        z-index: 2;
+
+        .stauts{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+
+            .item{
+                padding: 30px 40px;
+                min-width: 200px;
+                background: #272727;
+                margin-right: 30px;
+
+                &:last-of-type{
+                    background: #fff;
+                    color: #121a21;
+                }
+
+                h4{
+
+                    span{
+                        font-size: 20px;
+                        margin-left: 2px;
+                    }
+                }
+
+                h6{
+                    font-size: 15px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+/* ====================== [ End Numbers & Counter  ] ====================== */

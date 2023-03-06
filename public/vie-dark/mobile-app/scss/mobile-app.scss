@@ -1,0 +1,1678 @@
+
+
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: Vie
+    Theme URI: http://
+    Description: Creative Agency & Portfolio
+    Author: UI-ThemeZ
+    Author URI: http://themeforest.net/user/UI-ThemeZ
+    Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+
+== Table Of Content
+
+    |--- BASE
+
+        |- typography
+
+    |--- SHORTCODES
+
+        |- Header
+        |- buttons
+        |- brands
+        |- serv-block
+        |- services
+        |- process
+        |- team-vid
+        |- works
+        |- price
+        |- testimonials
+        |- app-action
+        |- Blog
+        |- shop
+        |- footers
+
+    |--- BASE
+
+        |- responsive
+	
+
+
+---------------------------------------------------------------- */
+
+
+
+$body-color: #fff;
+$main-color: rgb(18, 194, 233);
+$dark-shadow: 0px 10px 40px -4px rgba(76,76,76,.1); 
+$mobile-xs-screen: 480px;
+$tablet-sm-screen: 767px;
+$desk-md-screen: 991px;
+$desk-lg-screen: 1200px;
+
+
+
+/* ====================== [ Start typography  ] ====================== */
+
+body{
+  font-family: "Manrope", sans-serif !important;
+}
+  
+  h1 {
+    font-size: 55px;
+  }
+  
+  h2 {
+    font-size: 42px;
+  }
+  
+  h3 {
+    font-size: 35px;
+  }
+  
+  h4 {
+    font-size: 30px;
+  }
+  
+  h5 {
+    font-size: 24px;
+  }
+  
+  h6 {
+    font-size: 18px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  
+  p {
+    color: #9b9b9b;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0;
+    opacity: .7;
+  }
+  
+  .container{
+    max-width: 1170px;
+  }
+  
+  .stit{
+    font-size: 22px;
+    color: #f45162;
+    position: relative;
+    z-index: 4;
+
+    span{
+      position: relative;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #f45162;
+        z-index: -1;
+      }
+
+      &.left{
+        margin-right: 15px;
+      }
+
+      &.right{
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .bg-gray{
+    background: #202123;
+  }
+
+  .bg-dark{
+    background: #1e1f21 !important;
+
+    .stit{
+      color: #f45162 !important;
+  
+      span{
+        border: 1px solid #fff;
+      }
+    }
+  }
+
+
+  .circle-blur{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #17c0e9;
+    filter: blur(100px);
+  }
+
+/* ====================== [ End typography  ] ====================== */
+
+
+
+
+/* ====================== [ Start header  ] ====================== */
+
+.mobile-app{
+  min-height: 100vh;
+  padding: 100px 0 60px;
+
+  .caption{
+
+    h1{
+      font-size: 70px;
+    }
+
+    .buton{
+
+      svg{
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.page-app-header{
+  min-height: 60vh;
+
+  &:before{
+    background: #f45162;
+    background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+  }
+
+  .text-center{
+
+    h1{
+      font-size: 65px;
+    }
+
+    .links{
+
+      a{
+        color: #fff;
+
+        &:last-of-type{
+          text-decoration: underline;
+        }
+      }
+
+      span{
+        font-size: 30px;
+        margin: 0 10px;
+        position: relative;
+        bottom: -8px;
+      }
+    }
+  }
+}
+
+.swiper-container{
+  padding-bottom: 30px;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 0;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active{
+  background: #f45162;
+  border-color: transparent;
+}
+
+/* ====================== [ End header  ] ====================== */
+
+
+
+/* ====================== [ Start buton  ] ====================== */
+
+.buton{
+  min-width: 220px;
+  text-align: center;
+  padding: 15px 30px;
+  font-weight: 600;
+
+  svg{
+    fill: #fff;
+  }
+
+  &.butn-gr{
+    background-color: #f45162;
+    background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+    border: 1px solid transparent;
+    color: #fff;
+
+    svg{
+      fill: #fff;
+    }
+
+    &:hover{
+      background: #f45162;
+    }
+  }
+
+  &.butn-gray{
+    background: #252527;
+    transition: all .4s;
+
+    &:hover{
+      background: #f45162;
+      color: #fff;
+
+      svg{
+        fill: #fff;
+      }
+    }
+  }
+
+  &.butn-bord-dark{
+    border: 1px solid #fff;
+  }
+
+  &.butn-bord-red{
+    border: 1px solid #f45162;
+  }
+
+  &.butn-bord-light{
+    border: 1px solid #fff;
+    color: #fff;
+
+    svg{
+      fill: #fff;
+    }
+  }
+
+  &.butn-bg-light{
+    background: #fff;
+    color: #0f0f1e;
+    
+    span{
+      color: #0f0f1e;
+    }
+
+    svg{
+      fill: #0f0f1e;
+    }
+  }
+
+  &.rounded{
+    border-radius: 30px !important;
+  }
+
+  .icon{
+
+    svg{
+      position: relative;
+      width: 15px;
+      margin-left: 10px;
+      margin-bottom: -3px;
+    }
+  }
+}
+
+.butn-more{
+  border-bottom: 1px solid #fff;
+  font-weight: 600;
+
+  svg{
+    width: 6px;
+    fill: #fff;
+  }
+}
+
+/* ====================== [ End buton  ] ====================== */
+
+
+
+/* ====================== [ Start brands  ] ====================== */
+
+.brands{
+  position: relative;
+
+  .circle-blur{
+    top: -40px;
+    left: 0;
+    width: 180px;
+    height: 180px;
+    background: #17c0e9;
+  }
+
+  .head{
+
+    h2{
+
+      span{
+        position: relative;
+
+        .bord-gr{
+          position: absolute;
+          top: -10px;
+          left: -10%;
+          width: 120%;
+        }
+      }
+    }
+  }
+
+  .item{
+    margin: 30px auto;
+
+    .img{
+      position: relative;
+      overflow: hidden;
+      width: 120px;
+      margin: auto;
+      opacity: .5;
+
+      img{
+        transition: all .4s;
+      }
+
+      &:hover{
+        opacity: 1;
+
+        .front{
+          transform: translateY(-100%);
+        }
+
+        .back{
+          transform: translateY(0);
+        }
+      }
+
+      .back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: translateY(100%);
+      }
+    }
+  }
+}
+
+/* ====================== [ End brands  ] ====================== */
+
+
+
+/* ====================== [ Start serv-block  ] ====================== */
+
+.serv-block{
+  position: relative;
+
+  .circle-blur{
+    width: 240px;
+    height: 240px;
+    background: #f45162;
+    filter: blur(120px);
+    left: 0;
+    top: 50px;
+    z-index: -1;
+    opacity: .8;
+
+    &.two{
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 100px;
+    }
+  }
+
+  .content{
+
+    p{
+      font-size: 16px;
+    }
+
+    .butn-more{
+      margin-left: 20px;
+    }
+
+    .list-feat{
+
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+
+      li{
+
+        .icon{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          border-radius: 50%;
+          background: #f45162;
+          margin-right: 20px;
+
+          svg{
+            width: 10px;
+            fill: #fff;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  .app-sta{
+
+    .item{
+
+      .icon{
+        color: #f45162;
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      h3{
+        font-size: 55px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.accordion{
+
+  &.shadwo{
+      
+      .item{
+        padding: 17px 25px;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 7px;
+
+          .title{
+
+              h6{
+                font-size: 17px;
+
+                span{
+                  font-size: 30px;
+                  float: right;
+                  position: relative;
+                  top: -3px;
+                }
+              }
+          }
+
+          .accordion-info{
+              margin-top: 20px;
+              display: none;
+
+              &.active{
+                display: block;
+            }
+
+            p{
+              font-size: 15px;
+            }
+          }
+      }
+  }
+
+  .item.active{
+      display: block;
+      background: #252527;
+      box-shadow: 0px 10px 60px rgba(76,76,76,.1);
+      border-color: transparent;
+  }
+}
+
+/* ====================== [ end serv-block  ] ====================== */
+
+
+
+/* ====================== [ Start app-services  ] ====================== */
+
+.app-services{
+
+  .item{
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: #252527;
+    position: relative;
+    transition: all .4s;
+    z-index: 3;
+
+    &:hover{
+      border-color: transparent;
+
+      &:before{
+        opacity: 1;
+      }
+    }
+
+    &:after,
+    &:before{
+      content: '';
+      position: absolute;
+      border-radius: 5px;
+      background: #252527;
+      z-index: -1;
+    }
+
+    &:after{
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:before{
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+      opacity: 0;
+      transition: all .4s;
+    }
+
+    .item-tit{
+      display: flex;
+
+      .icon{
+        margin-right: 20px;
+
+        svg{
+          width: 40px;
+          fill: #f45162;
+        }
+
+        span{
+          font-size: 45px;
+          color: #f45162;
+        }
+      }
+
+      .text-tit{
+
+        h5{
+          font-size: 22px;
+          margin-top: 10px;
+          position: relative;
+        }
+      }
+    }
+
+    p{
+      font-size: 15px;
+    }
+  }
+}
+
+/* ====================== [ End app-services  ] ====================== */
+
+
+
+/* ====================== [ Start app-process  ] ====================== */
+
+.app-process{
+
+  .item{
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.1);
+    position: relative;
+    transition: all .4s;
+    z-index: 3;
+
+    &:hover{
+      border-color: transparent;
+
+      &:before{
+        opacity: 1;
+      }
+    }
+
+    &:after,
+    &:before{
+      content: '';
+      position: absolute;
+      border-radius: 10px;
+      background: #111215;
+      z-index: -1;
+    }
+
+    &:after{
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:before{
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+      opacity: 0;
+      transition: all .4s;
+    }
+
+    .icon{
+      font-size: 60px;
+      color: #f45162;
+      margin-bottom: 30px;
+    }
+
+    .step-number{
+      font-size: 14px;
+      color: #f45162;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 20px auto;
+    }
+
+    p{
+      font-size: 16px;
+    }
+  }
+}
+
+/* ====================== [ End app-process  ] ====================== */
+
+
+
+/* ====================== [ Start team-vid  ] ====================== */
+
+.team-vid{
+  margin-top: 260px;
+  position: relative;
+
+  .circle-blur{
+    width: 220px;
+    height: 220px;
+    background: #157b95;
+    filter: blur(90px);
+    left: 0;
+    top: 80px;
+    opacity: .9;
+
+    &.two{
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 100px;
+      background: #0740ac;
+    }
+  }
+  
+  .vid-img{
+    position: relative;
+    min-height: 520px;
+    padding: 80px 0;
+    margin-top: -260px;
+
+    .vid{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      text-align: center;
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 4;
+      transform: translateY(-50%) translateX(-50%);
+
+      svg{
+        fill: #f45162;
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+    }
+  }
+
+  .item{
+
+    .img{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 50px;
+      position: relative;
+
+      &:hover{
+
+        &:before{
+          background: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+        }
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+      }
+
+      &:after,
+      &:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      &:after{
+        border: 1px solid rgba(255,255,255,.1);
+        top: -15px;
+        left: -15px;
+      }
+
+      &:before{
+        background: #f45162;
+        bottom: -15px;
+        right: -15px;
+      }
+    }
+
+    h5{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* ====================== [ End team-vid  ] ====================== */
+
+
+
+/* ====================== [ Start app-works  ] ====================== */
+
+.app-works{
+
+  .filter{
+    padding: 15px 30px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 30px;
+
+    span{
+      margin: 0 30px;
+      padding: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      position: relative;
+      transition: all .4s;
+      cursor: pointer;
+
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: -16px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #f45162;
+        background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+        opacity: 0;
+        transition: all .4s;
+      }
+
+      &.active{
+        color: #f45162;
+
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .items{
+    margin-top: 30px;
+
+    .item-img{
+      position: relative;
+
+      &:hover{
+
+        .cont{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .cont{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10,11,15,.75);
+        color: #fff;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s;
+
+        .icon{
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          border: 2px solid #fff;
+          border-radius: 50%;
+          font-size: 40px;
+          margin-bottom: 20px;
+        }
+
+        h5{
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* ====================== [ End app-works  ] ====================== */
+
+
+
+
+/* ====================== [ Start app-price  ] ====================== */
+
+.app-price{
+  
+  .item{
+    padding: 50px 70px;
+    border: 1px solid rgba(76,76,76,.1);
+
+    &.sm-padding{
+      padding: 50px 40px;
+
+      .feat{
+
+        li{
+
+          .icon{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &.active{
+      border-color: transparent;
+      background: #202123;
+    }
+
+    .amount{
+
+      h3{
+        font-size: 100px;
+        font-weight: 500;
+        color: #f45162;
+        position: relative;
+        display: inline-block;
+        line-height: 1;
+
+        span{
+          position: absolute;
+          left: -20px;
+          top: 14px;
+          color: #fff;
+          font-size: 25px;
+        }
+      }
+    }
+
+    .order{
+
+      .buton{
+        width: 100%;
+      }
+    }
+
+    .feat{
+
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+
+      li{
+        color: #9b9b9b;
+        margin-top: 15px;
+
+        &.disbl{
+          opacity: .3;
+        }
+
+        .icon{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          border-radius: 50%;
+          background: #f45162;
+          margin-right: 20px;
+
+          svg{
+            width: 10px;
+            fill: #fff;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ====================== [ End app-price  ] ====================== */
+
+
+
+/* ====================== [ Start app-testim  ] ====================== */
+
+.app-testim{
+
+  .item{
+    padding: 60px;
+    background: #131416;
+    border: 1px solid transparent;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+
+    &:hover{
+
+      &:after{
+        opacity: 1;
+      }
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background: #131416;
+      z-index: -1;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background: #f45162;
+      background: linear-gradient(-35deg, #17c0e9, #c96ddd, #f45162);
+      z-index: -2;
+      opacity: 0;
+      transition: all .4s;
+    }
+
+    .icon{
+
+      img{
+        width: 50px;
+      }
+    }
+
+    .info{
+      margin-top: 30px;
+
+      .img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 15px;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .cont{
+
+        span{
+          font-size: 15px;
+          opacity: .4;
+        }
+      }
+    }
+
+    .text{
+
+      p{
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+/* ====================== [ End app-testim  ] ====================== */
+
+
+
+/* ====================== [ Start app-action  ] ====================== */
+
+.app-action{
+  
+  .box-gr{
+    background-color: #f45162;
+    background-image: linear-gradient(-35deg, #17c0e9, #c96ddd, #f45162);
+    margin-top: 100px;
+
+    .img{
+      position: relative;
+      margin-top: -100px;
+    }
+
+    .cont{
+      padding: 80px 0;
+      position: relative;
+
+      .shape-light{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 80%;
+        height: 80%;
+        pointer-events: none;
+      }
+
+      .stit span{
+        border-color: #fff;
+
+        &:after{
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* ====================== [ End app-action  ] ====================== */
+
+
+
+/* ====================== [ Start app-blog  ] ====================== */
+
+.app-blog{
+
+  .item{
+    border-radius: 10px;
+    background: #252527;
+    overflow: hidden;
+    transition: all .3s;
+
+    &:hover{
+
+      .buton{
+        background: #f45162;
+          background: linear-gradient(-35deg, #17c0e9, #c96ddd, #f45162);
+          color: #fff;
+          border-color: transparent;
+      }
+    }
+
+    .img{
+      height: 300px;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .cont{
+      padding: 20px 15px 20px 0;
+
+      .tag{
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #f45162;
+        margin-bottom: 15px;
+      }
+
+      h5{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .info{
+
+        a{
+          margin-right: 10px;
+          font-size: 12px;
+
+          &:last-of-type{
+            margin-right: 0;
+          }
+
+          span{
+            opacity: .4;
+          }
+        }
+      }
+
+      p{
+        font-size: 16px;
+      }
+
+      .buton{
+        padding: 11px 30px;
+        min-width: auto;
+        margin-top: 20px;
+        font-size: 14px;
+
+        &:hover{
+          background: linear-gradient(-35deg, #17c0e9, #c96ddd, #f45162);
+          color: #fff;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+/* ====================== [ End app-blog  ] ====================== */
+
+
+
+/* ====================== [ Start shop  ] ====================== */
+
+.shop{
+
+  .sidebar{
+
+    .search{
+
+      .form-group{
+        position: relative;
+
+        input{
+          padding: 15px 60px 15px 15px;
+          border: 1px solid rgba(255,255,255,.1);
+          background: transparent;
+          border-radius: 5px;
+          width: 100%;
+        }
+
+        button{
+          padding: 11px 20px;
+          background: #f45162;
+          color: #fff;
+          font-size: 18px;
+          border: 0;
+          border-radius: 5px;
+          position: absolute;
+          top: 3px;
+          right: 3px;
+          
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .box{
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 5px;
+    }
+
+    .gat{
+
+      li{
+        margin-bottom: 15px;
+        opacity: .9;
+        overflow: hidden;
+        padding-left: 20px;
+        position: relative;
+
+        &:before{
+          content: '';
+          width: 6px;
+          height: 1px;
+          background: #1e1f21;
+          position: absolute;
+          left: 0;
+          top: 50%;
+        }
+
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+
+        a{
+          width: 100%;
+        }
+
+        span{
+          float: right;
+        }
+      }
+    }
+
+    .tags{
+
+      a{
+        font-size: 13px;
+        padding: 10px 15px;
+        background: rgba(255,255,255,.06);
+        border-radius: 4px;
+        margin: 4px 2px;
+
+        &:hover{
+          color: #fff;
+          background: #f45162;
+          background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+        }
+      }
+    }
+  }
+
+  .store{
+
+    .top-area{
+
+      .filter-select{
+
+        select{
+          background: #111215;
+          color: #fff;
+          padding: 10px;
+          border: 1px solid rgba(255,255,255,.1);
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .item{
+
+      &:hover{
+
+        .img{
+
+          .add, 
+          &:after{
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+        }
+      }
+
+      .img{
+        position: relative;
+        width: 100%;
+        height: 280px;
+        margin-top: 50px;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &:after{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(16,15,19,.7);
+          transition: all .4s;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .tag{
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          padding: 5px 10px;
+          border-radius: 4px;
+          color: #fff;
+          font-size: 14px;
+          background: #f45162;
+          background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+          z-index: 2;
+        }
+
+        .add{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50% , -50%);
+          z-index: 2;
+          transition: all .4s;
+          opacity: 0;
+          visibility: hidden;
+          
+          a{
+            white-space: nowrap;
+            padding: 14px 25px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            background: #f45162;
+            background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+
+            span{
+              width: 15px;
+              height: 15px;
+              line-height: 15px;
+              text-align: center;
+              border: 1px solid #fff;
+              border-radius: 50%;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      .info{
+        padding-top: 30px;
+        text-align: center;
+
+        span{
+          color: #f45162;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .range-slider {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  
+    .start-pointe{
+      position: absolute;
+      left: 0;
+      bottom: -25px;
+    }
+  
+    #tooltip {
+      position: absolute;
+      bottom: -25px;
+      right: 0;
+      left: auto !important;
+    }
+    #tooltip span {
+  
+      &:before{
+        content: '$ ';
+      }
+    }
+  }
+  #range {
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  #range:focus {
+    outline: none;
+  }
+  #range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: linear-gradient(90deg, #f45162 var(--range-progress), #dee4ec var(--range-progress));
+    border-radius: 2px;
+  }
+  #range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: #f45162;
+    background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    transform: translateY(calc(-50% + 2px));
+  }
+}
+
+/* ====================== [ End shop  ] ====================== */
+
+
+
+/* ====================== [ Start footer  ] ====================== */
+
+.app-footer{
+  padding: 100px 0 0;
+  position: relative;
+  background: #131416;
+
+  .circle-blur{
+    width: 180px;
+    height: 180px;
+    background: #f45162;
+    filter: blur(120px);
+    left: 0;
+    top: 80px;
+    opacity: .7;
+
+    &.two{
+      width: 220px;
+      height: 220px;
+      left: auto;
+      right: 0;
+      top: auto;
+      bottom: 0;
+      background: #d14add;
+    }
+  }
+
+  .logo-brand{
+    max-width: 90px;
+  }
+
+  .info{
+
+    span{
+      opacity: .4;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    h6{
+      font-size: 20px;
+    }
+  }
+
+  .social{
+
+    a{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.1);
+      position: relative;
+      z-index: 3;
+
+      &:hover{
+        border-color: transparent;
+  
+        &:before{
+          opacity: 1;
+        }
+      }
+  
+      &:after,
+      &:before{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background: #1e1f21;
+        z-index: -1;
+      }
+  
+      &:after{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+  
+      &:before{
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        background-image: linear-gradient(to left, #17c0e9, #c96ddd, #f45162);
+        opacity: 0;
+        transition: all .4s;
+      }
+    }
+  }
+
+  .links{
+
+    .title{
+      font-size: 22px;
+    }
+
+    ul{
+      margin: 0;
+    }
+
+    li{
+      margin-top: 25px;
+      font-size: 17px;
+      opacity: .7;
+      line-height: 1;
+
+      .icon{
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .sub-footer{
+    margin-top: 80px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+}
+
+/* ====================== [ End footer  ] ====================== */
+
+
+
+/* ====================== [ Start Responsive  ] ====================== */
+
+@media screen and (max-width: $desk-md-screen){
+
+  .lg-hide{
+    display: none;
+  }
+
+  h2{
+    font-size: 30px;
+  }
+
+  .mobile-app .caption{
+    margin-bottom: 50px;
+    text-align: center;
+
+    h1{
+      font-size: 60px;
+    }
+  }
+
+  .app-action .box-gr .cont{
+    width: 100%;
+    text-align: center;
+  }
+
+  .app-works .filter{
+    padding-bottom: 0;
+  }
+
+  .app-works .filter span{
+    margin: 0 15px 20px;
+
+    &:after{
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-sm-screen){
+
+  h2{
+    font-size: 25px;
+  }
+
+  .mobile-app .caption h1{
+    font-size: 40px;
+  }
+
+  .app-blog .item .cont{
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: $mobile-xs-screen){
+
+  .buton{
+    margin-top: 15px;
+  }
+}
+
