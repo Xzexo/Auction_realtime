@@ -1,123 +1,116 @@
 <!DOCTYPE html>
+<html lang="zxx">
 <head>
-  <meta charset="UTF-8">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+    <meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+    <meta name="author" content="" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title  -->
+    <title>Bidlersegde</title>
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<html>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Plugins -->
+    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="vie-dark/css/style.css" />
+
+     <!-- Arch style -->
+     <link rel="stylesheet" href="vie-dark/css/arch-skin.css" />
+
+<body class="position-r">
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+
+    <div id="preloader">
+    </div>
+
+    <!-- ==================== End Loading ==================== -->
+
     
-<style>
-    /*set border to the form*/
-     
-    form {
-        border: 3px solid #f1f1f1;
-    }
-    /*assign full width inputs*/
-    
-    input[type=text],
-    input[type=password],
-    input[type=addusername],
-    input[type=addpassword] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-    /* set a hover effect for the button*/
-     
-    button:hover {
-        opacity: 0.8;
-    }
-    /*set extra style for the cancel button*/
-     
-    .cancelbtn {
-        width: auto;
-        padding: 10px 18px;
-        background-color: #f44336;
-    }
-    /*centre the display image inside the container*/
-     
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
-    /*set image properties*/
-     
-    img.avatar {
-        width: 40%;
-        border-radius: 50%;
-    }
-    /*set padding to the container*/
-    .col{
-        width: 800px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .container {
-        width: auto;
-        padding: 16px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    header{
-        text-align: center;
-        color: green;
-        font-family: 'Comic Sans';
-    }
-</style>
- 
-<header>
-    <h1>
-        Bidsleredge
-    </h1>
-</header>
-<body>
-        <div class="imgcontainer">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAvVBMVEUzTVz///8uRVP2w1jr8PPV1tvtrVDQg0XchEP+yFh0clorSVwmP04sQ1IxS1snRVXc3OEfQFEpRlaorrXO0NXX3eEOOVPlt1c7UFsWO03y9/n2wFawusFLXWljc39CVWJ9i5RtfYe9wcfGzNDn7PBGWWWRnKNaanULMELg4+SLl5+gqrC2u8FVZnJ6iJDCxsxHV1xlaFqBeVrUrVhIWFvGo1ZSXVvds1cgRVy+n1mhi1aMfVXco1HFf0UALD+m0hGXAAAMcElEQVR4nN3de5ejthUAcOG1u92sEBa2kxEdG+P325tukyZpk+//sSrwExB6wJXM9J6z5+w/M8Pv6EpXEiCQZz2i0fwwWE2T9XEcxwihOB4f18l0NTjMR5H9P48s/u7u9rw/HRFjlAZhSAhBt+D/D8OAUsbQ+rSabbsWr8KWcHSYruNU9mCJg6RStJ4eRpauxIZwO0hQQEOiwuWcNECTwdbC1UALo/OUMKpsOWGElJHpDLprggoXhySkYR3cU1uGyfsC8qLghNGsKe/elGRygGtJKGFvSkF4NyQ99YCuDETYHRwZHO+KZOM9SBEBEG53iNYaWRRBKNoBDK6NhaMkCCzwLhEEk8ZlsqFwuAZPz3yEbD18obA3YTbSMx+ETRoZGwi3CeDoKYuQJg1ytbawO605c6lnnNYeV+sKBxbHF1EEdO9UODxSp7406Lhed6wl3Fmpf6ogdOpIOA/dJugjgmDuQBidHFSIqiDsZDwlNxUO41c14CWC2LQZDYWrl/TA5yB0ZVG4OL4cyIMejVbIJsI5cTOHUUVITDLVQLhvQwNmQUzKv74wcV/kq4Mm4MLu+LVjaDGCpe5EVVM4itvRBR8RvmmuN/SEc3fLCO0god54oyV8f+E0RhLsHUo4YK+2VAQbwAj3bRpE86FTNdTCVXuBnKiewimFq7am6CWYkqgStjhFL6FMVIXwve1ATlQMN3Lhe7tT9BKKoiEVzj8CkBOlpV8mHLVwJiOMUDaBkwi78QcBIhJLpuES4bhtk+3qCMd1hEm7lkvyCBJzYesLYT6qy2KVcP6xgJxYNaBWCBcmj/u0Igip2IGrEB4/zihzi/BoIrSxnrCeFBXrDKFwaAEYEBRaTgwqvP0mEkbwpZ6g1Ww+29nt3SQW3bYRCU/glZDE536v1+sf7OZqcNITWphvB4MUyIkzu0TRHFwghJ9vk/gC5MSzVSIJdYRT+NkamdyEtlsx2KmFNsZRsr4LbRNp6ZHGknBs5SG8Xs8RkZTqflFoZ8IdTp+JVvtiadumIOzaWTLR956zVgwiqdDCMIPSvaKoO8wRLZb+YCoTjqzkKOXAbnfuKlHpViJMbMwcgwzYLbSiPWKYVAt7NpqQXYHuiPmKkRNOLDQhvQMLiWqPGE6qhEMLG8DBE7DQivb6IutVCNfwf5HmgK4SlazFwhF8E7IC0BWRjYRC+IG02ILO+uLzcPoQbsGLfSAAOuqLwVYg3EELyynqLlGDVVnYhf4jVcBiolqZwBEUlYQD4GovTlEB0U6iPpYYdyHwulA0yLhMVDIuCnuwpaI6RV0R71X/JjyBlgp5C5b7ogViOM0LI9BeKOuDwla00RdplBPOIIXqFiwRD/ArbzrLCSFXFao+KCTCT6hu85qLcAGYJHotmMZTX+zvMdwVXON6Q/EiPMAlqU4fFLTiAHfALuEa9PAkhMsR3RQtEPs73IEmXtM0E0YvAj4Stb/0O/DE6C4EG0lNUjSL6ELsn3gTghPp+S6cArWh/iBzj2MyGw4PkwsQmHgp+pkQqN6apiiPNcb47Q3fgLBEgm7CLcyc1LwFF8eU5neeA+RSrsG2V2HjhVOWAsZ98AosBoDsFtkSCjWvFQEax5TUaMG1CAhJzOoFatoNCdkPe8NDXKcPCoGAxKwj8n+jZrPe4eX+7si0BYUpCkwMRpmw0ZTt9pRFb2hIlADhiOn6AjWthveJlxmxMkVBieEuEzbZzCfHx+TZhKgAQhHT7X3kdZsMNGQ5rEGU9UFQYvoAOPK2japhcOgZExcD5iuFMES65cJm025y7JsSF8P+ADsi8qEGeatmxSKc9MyIC57XnKgWQhCDPRc23UcMzIiLbL3kqhXDExc2vi9qRFxcRyZHrcgHU+Q1/i2cqN0XF499CydEPm9DEcDSSbsVF8/ba04SlUUIZHGoSXwGOiKyLYJ5dUSLuDj3eq6JdI6Atko1+uLiGA9LRLWwGZEe0ADojoGyFflUDS+dE4MBWkHtlQaJnJjORfG4TLSbqOEKQe0kqhL1spoQtaJVYjhFCdxNGUmi3lcTWNAXbRJJgiaAt50qiU/LJceJSiboCHn3tYr4vOB1SyRHNAYEVvXF/IpelKhqYV3iGMWgQlErllb0TvsisA+Vi0Yk2FVzmajwwmKiDkWbTu7rImgUEhWJLt1tXwSPHLG/El6689IPG7m+OGPCa3WVqLGNnpjvi2exUNiKaqExMQauh7d4JGr1dbspGmPYOc0T8Zao/WPlVbtIVD6ngZyX5oiTHs/U/u0pi1cR+bwUcG2RjzDen88D+R0K+0WDry3g1oelXx4wxhQXbL0v8vUh2BpfFOprtZ2owQpsn0YcLycGA6i9toogGkSrfZEegPZLq0ODaHMCR+fIwvtc+dAgChJV/VN6RLYFuW8hDZ1EtTeBYxHEvSdF1OyLIIma3nuy8V5lMTSIlkbU7P4h7LskLSNm94Ab3sfXipcVjew+PujLJJWhQbQx3NBz4+dpIIkWEjV7nsbVEZcaRPDSf3kmysVgmv01DSJ00bg81wb2pL4yNIjAiXp9NtHNUPMS4vX50obPCBuE8wlc+tJ64+e8wYmAffH2nLedU2kqQoMIl6j3Z/WdHkvukkjfYd+Z0QuXE7j7OzMOO2IaGkSY4ebx3pO7iqhNBEnUcHcXnt0ei+yqaFwOTwZ+hxSOCFA0yOMdUqf1IgsNYuNEfX4PGPJd7vYQc+9ym7+PT742DEqpL7/gpkUj9z6+YZpy3reff2gcP39j1B4xf6aC2fqCfP3n909fAOLTLz/8KGvHRlvFhXMxTM42+fqv718+AcWXXzqBEVH8ZIeISL2c0KDof/31ExiQE3/6Jm3FUqJONInF82n0zxgibz/B+VLivwOTRNXL087ToXTG50T99jtgC2bEPyoeRxETzxoVg8fjPGHTs77Ir7C+NKSNWJzAnbWAHVY+6yvSW2D89gdwE/JG/I+0ZhSIB60s9TvdklDzzL2v36GBn778/qP8cp8TNTvmRR34cXK54bmJhMCOM1l8VwifiWeNWXv6E6JzE7XmNQRZEP6kEqZFI3tQrj8c6zXh0ym0hueXkrd/vELYwZ0Vb8bhvqMF7GzE55d6Gg+AvUrIjXi59PV8HVxxBq1O1X+dkI+PepWQx2ZYIdQ4te2VQu3AlWdBez3ll7c/hJBVn+etHk4/ghAnXrVwq2rEDyD0NyOJUPlthA8gxNJvI3jR/4FQ/n0L1RKj/cKN4hslnid/sr31Qlz6mmVJKP8CROuFrPTttfL3nqSrqLYLi8OMUCj9ZlfLhT4ucwy/u0be/gYf/wUTbvS+uyYvip//Dh6f5bsY+oE1v53nRUtJnv75GTz+BBL6b7rfP/SGsskbzNVYCF+Uo3W+Q0q0l2mOgxl8h1T+LVm9vSDnUa71UuFCtnvaSqLvm30PWP5N5zYSRR/olArlnwlsH5EZf5db8W31thEL63o9oTeWbWm0i4iX1QyJUP4AeJuIGHWrGRKhN5J+N7c9RB+PJAqZUPHt49YQ/6oaRtVC7/ARiJuD1CAXKh6ubQWRFTdmzISKnakWEDeVhVBT6K3anagb8XTbRKj4BvKLiWqghrDNxOq5mpHQe29ropZ2f+sKedFoY+n3/3rXuXgtoTds4ewGY2mhNxR627ht03CMZFM1c6HXHbdrMYWXksl2LSFfL7ZpScwm6gs2FvKq0Za9G1+nStQQenPUjh047OuNMeZCb3GU7aM68vlsXLGrBiBMt4qrM9UN0deYqDURer1l9ZjqgojfTDK0jtCLptUTHOtEf3PSLRL1hXzAIZXNaJmI8dn8cmsI0xvhVc1ok4hZ+Ra2LaHXqxxU7RHZuPQQgkUhX1GFFe1oh+hj1XYMuNCLdlS84LBA9PFmajzCNBby9UZChXMccCJmyVZ9ORaEnjdKmMgIS8SbSU99KZaE3DgRGQGJeLOuN8BACXmunoLymANE9DGeaK5zLQq5cYVKs1UIos86uwb9D1DIx9X3YzFZGxPxZjkQPR5jHCBCHqMpzY+sjYiYsVOj4eUpoIQ8Zgl5RtYmYuZPDiDNlwWgkK+QZ0n4mAfUIfLajpOD0QpXFaBCHtF8h9hVaUb0+cxs05nO4FrvEtDCNLbvJxRwJdEm8rLAWGcyABg6S2FDmMZotlvHlGGsOOmB2ziOHKeHxoWvImwJ04i28/3p2NlsWCrFT29m+SmMyzabzvG0mm1rT6s1wqbwGhx6GKxOyXocvyHUQehtOV4np9XgMB9BdzpB/A+qRacdhGUtBwAAAABJRU5ErkJggg=="
-                 alt="Avatar" class="avatar">
-        </div>
-        <div class="col">
+    <!-- ==================== Start About ==================== -->
+
+    <section class="about-ar section-padding" data-scroll-index="1">
         <div class="container">
-        <form name="loginform" id="loginform" method ="post" action="/check">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" id="username" maxlength="20">
- 
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="passwd" id="passwd" maxlength="25" >
-          
-            <input type="submit" class ="btn btn-success" value = "Login" >
-            <input type="button" class ="btn btn-success" value = "Register" onclick="location.href='/register'">
-        </form>
-        </div>  
-        </div>
- 
+            <div class="row">
+                <div class="col-lg-6 valign">
+                    <div class="img">
+                        <div class="bg-img bg-fixed hero-bg" data-background="vie-dark/img/arch/hero.jpg"></div>
+                        <div class="exp valign text-center">
+                            <div class="full-width">
+                                <h2 class="bg-img bg-fixed" data-background="vie-dark/img/arch/hero.jpg">Join</h2>
+                                <p>Bidlersegde</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-lg-6 valign">
+                    <div class="content">
+                        <h3>Login</h3>
+                        <form name="loginform" id="loginform" method ="post" action="/check">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <p class="wow txt" >Username</p>
+                                    <input id="username" type="text" name="username" placeholder="Enter Username"
+                                maxlength="20" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <p class="wow txt" >Password</p>
+                                    <input id="passwd" type="password" name="passwd" placeholder="Enter Password"
+                                    maxlength="20" required="required">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="butn light mt-30" value = "Login" >
+                                <input type="button" class="butn light mt-30" value = "Register" onclick="location.href='/register'">
+                            </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== End About ==================== -->
+
+    <!-- jQuery -->
+    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="vie-dark/js/plugins.js"></script>
+
+    <!-- custom scripts -->
+    <script src="vie-dark/js/scripts.js"></script>
+    
 </body>
  
 </html>
-
-<script>
-    function checklogin(){
-    var login_user_name =$("#login_user_name").val();
-    var login_user_password =$("#login_user_password").val();
-    if(login_user_name.length >= 5 && login_user_name.length <= 10 && login_user_password.length >= 5 && login_user_password.length <=10){
-        $("#loginform").submit();}
-        else{
-        alert("ตรวจสอบข้อมูล")
-            }
-    
-    }
-    
-    </script>

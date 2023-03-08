@@ -211,8 +211,7 @@
                                 <h6>About Us</h6>
                             </div>
                             <h3 class="main-title wow" data-splitting>We are student at SIIT <br> from Digital Engineering.</h3>
-                            <p class="wow txt" data-splitting>We create this project for auction in online like in auction
-                               house</p>
+                            
                             
                         </div>
                     </div>
@@ -295,25 +294,31 @@
               <div class="gallery full-width">
 
                   <!-- gallery item -->
+                  <!-- Room -->
+                <% Object.values(room).forEach(function(room){%>
                   <div class="col-md-6 items graphic lg-mr wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/1.jpg" alt="image">
+                          <a href="/login" class="imago wow">
+                              <img src="vie-dark/img/arch/work/1.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
                       <div class="cont">
-                          <h5>BUGANVILLA HOUSE</h5>
-                          <span class="tags main-color custom-font"><a href="#0">Arch</a>, <a
-                                  href="#0">Interior</a></span>
+                          <h5 href="/<%= room._id%>">BUGANVILLA HOUSE</h5>
+                          <span class="tags main-color custom-font">
+                            <a>Time open: <%= room.time_open%></a>
+                            <a>Time close: <%= room.time_close_door%></a>
+                            <a>Time finish: <%= room.time_finish%></a></br>
+                            <a>Date: <%= room.auction_day%></a>
+                          </span>
                       </div>
                   </div>
-
+                  <% }) %>
                   <!-- gallery item -->
                   <div class="col-md-6 items web wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/2.jpg" alt="image555">
+                          <a href="vie-dark/project-details2.html" class="imago wow">
+                              <img src="vie-dark/img/arch/work/2.jpg" alt="image555">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
@@ -327,8 +332,8 @@
                   <!-- gallery item -->
                   <div class="col-md-6 items web wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/5.jpg" alt="image">
+                          <a href="vie-dark/project-details2.html" class="imago wow">
+                              <img src="vie-dark/img/arch/work/5.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
@@ -342,8 +347,8 @@
                   <!-- gallery item -->
                   <div class="col-md-6 items web graphic wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/3.jpg" alt="image">
+                          <a href="vie-dark/project-details2.html" class="imago wow">
+                              <img src="vie-dark/img/arch/work/3.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
@@ -357,8 +362,8 @@
                   <!-- gallery item -->
                   <div class="col-md-6 items brand wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/4.jpg" alt="image">
+                          <a href="vie-dark/project-details2.html" class="imago wow">
+                              <img src="vie-dark/img/arch/work/4.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
@@ -373,8 +378,8 @@
                   <!-- gallery item -->
                   <div class="col-md-6 items brand wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
-                          <a href="project-details2.html" class="imago wow">
-                              <img src="img/arch/work/6.jpg" alt="image">
+                          <a href="vie-dark/project-details2.html" class="imago wow">
+                              <img src="vie-dark/img/arch/work/6.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
