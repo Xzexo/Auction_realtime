@@ -28,27 +28,26 @@ const upload = multer({
     storage:storage
 })
 
-
+//! Home
 router.get("/",(req,res)=>{
     Room.find().exec((err,doc)=>{
         res.render('index.ejs',{room:doc})
     })
 })
 
-router.get("/register_item",(req,res)=>{
-    res.render('register_item.ejs')
+//! User
+router.get('/user',(req,res)=>{
+    Room.find().exec((err,doc)=>{
+        res.render('users.ejs',{room:doc})
+    })
+})
+router.get('/user_edit',(req,res)=>{
+    res.render('user_edit.ejs')
 })
 
-router.get("/room",(req,res)=>{
-    res.render('room.ejs')
-})
-router.get("/book_room",(req,res)=>{
-    res.render('book_room.ejs')
-})
 
-router.get('/register',(req,res)=>{
-    res.render('register.ejs')
-})
+
+//! Login 
 router.post('/check',async (req,res)=>{
     const user_name = req.body.username
     const pass_wd = req.body.passwd
@@ -75,29 +74,48 @@ router.post('/check',async (req,res)=>{
     }
 
 })
-router.get('/user_edit',(req,res)=>{
-    res.render('user_edit.ejs')
+
+router.get('/login',(req,res)=>{
+    res.render('login.ejs')
 })
+
+router.get('/register',(req,res)=>{
+    res.render('register.ejs')
+})
+
+
+//! Admin
 router.get('/admin',(req,res)=>{
-    res.render('admin.ejs')
+    Room.find().exec((err,doc)=>{
+        res.render('admin.ejs',{room:doc})
+    })
 })
 router.get('/admin_add',(req,res)=>{
     res.render('admin_add_room.ejs')
 })
-router.get('/login',(req,res)=>{
-    res.render('login.ejs')
+
+
+//! Feature
+router.get("/register_item",(req,res)=>{
+    res.render('register_item.ejs')
 })
-router.get('/auction',(req,res)=>{
-    res.render('auction.ejs')
+
+router.get("/room",(req,res)=>{
+    Room.find().exec((err,doc)=>{
+        res.render('room.ejs',{room:doc})
+    })
 })
 
 router.get("/:id",(req,res)=>{
     const room_id = req.params.id
     Room.findOne({_id:room_id}).exec((err,doc)=>{
-        res.render('before.ejs',{room:doc})
+        res.render('book_room.ejs',{room:doc})
     })
 })
 
+router.get('/auction',(req,res)=>{
+    res.render('auction.ejs')
+})
 
 
 
@@ -152,6 +170,14 @@ router.post('/open_room_db',(req,res)=>{
         if(err) console.log(err)
         res.redirect('/admin')
     })
+})
+
+router.post('/edit_room',(req,res)=>{
+    const edit_id = req.body.edit_room_id
+    Room.findOne({_id:edit_id}).exec((err,doc)=>{
+        console.log(doc)
+    })
+
 })
 
 module.exports = router

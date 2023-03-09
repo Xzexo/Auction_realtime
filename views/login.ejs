@@ -33,8 +33,6 @@
     <!-- Core Style Css -->
     <link rel="stylesheet" href="vie-dark/css/style.css" />
 
-     <!-- Arch style -->
-     <link rel="stylesheet" href="vie-dark/css/arch-skin.css" />
 
 <body class="position-r">
     <!-- ==================== Start Loading ==================== -->
@@ -56,48 +54,52 @@
 
     
     <!-- ==================== Start About ==================== -->
-
-    <section class="about-ar section-padding" data-scroll-index="1">
+    <section class="contact-sec style2 section-padding position-re bg-img" data-background="img/patrn1.png" data-scroll-index="7">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 valign">
-                    <div class="img">
-                        <div class="bg-img bg-fixed hero-bg" data-background="vie-dark/img/arch/hero.jpg"></div>
-                        <div class="exp valign text-center">
-                            <div class="full-width">
-                                <h2 class="bg-img bg-fixed" data-background="vie-dark/img/arch/hero.jpg">Join</h2>
-                                <p>Bidlersegde</p>
-                            </div>
-                        </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-10">
+                    <div class="sec-head  text-center">
+                        <h2 class="wow fadeIn" data-wow-delay=".3s">Log<span class="color-font">in</span></h2>
                     </div>
                 </div>
-
-                <div class="col-lg-6 valign">
-                    <div class="content">
-                        <h3>Login</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="form wow fadeInUp" data-wow-delay=".5s">
                         <form name="loginform" id="loginform" method ="post" action="/check">
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    <p class="wow txt" >Username</p>
-                                    <input id="username" type="text" name="username" placeholder="Enter Username"
-                                maxlength="20" required="required">
+
+                            <div class="messages"></div>
+
+                            <div class="controls">
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label><b>Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="username" id="login_user_name" maxlength="20" required>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <p class="wow txt" >Password</p>
-                                    <input id="passwd" type="password" name="passwd" placeholder="Enter Password"
-                                    maxlength="20" required="required">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="passwd" id="passwd" maxlength="20" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <input type="submit" class="butn light mt-30" value = "Login" >
+                                    <input type="button" class="butn light mt-30" value = "Register" onclick="location.href='/register'">
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <input type="submit" class="butn light mt-30" value = "Login" >
-                                <input type="button" class="butn light mt-30" value = "Register" onclick="location.href='/register'">
-                            </div>
-                            </form>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- ==================== End About ==================== -->
 
