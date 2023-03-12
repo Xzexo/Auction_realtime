@@ -15,7 +15,6 @@ mongoose.connect(dbUrl,{
 
 //Schema
 let itemSchema = mongoose.Schema({
-    //item_id:Number,
     item_name:String,
     item_description:String,
     item_begin_price:Number,
@@ -23,7 +22,9 @@ let itemSchema = mongoose.Schema({
     item_minimum_sell:Number,
     item_pic:String,
     item_defect:String,
-    item_defect_pic:String
+    item_defect_pic:String,
+    user_id:String,
+    room_id:String
 })
 
 //create model

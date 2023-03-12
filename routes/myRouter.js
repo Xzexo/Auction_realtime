@@ -96,6 +96,18 @@ router.get('/admin_add',(req,res)=>{
 
 
 //! Feature
+router.get("/user",(req,res)=>{
+    res.render('users.ejs')
+})
+
+router.get("/history",(req,res)=>{
+    res.render('history.ejs')
+})
+
+router.get("/history_check",(req,res)=>{
+    res.render('history_check.ejs')
+})
+
 router.get("/register_item",(req,res)=>{
     res.render('register_item.ejs')
 })
@@ -105,16 +117,15 @@ router.get("/room",(req,res)=>{
         res.render('room.ejs',{room:doc})
     })
 })
+router.get('/auction',(req,res)=>{
+    res.render('auction.ejs')
+})
 
 router.get("/:id",(req,res)=>{
     const room_id = req.params.id
     Room.findOne({_id:room_id}).exec((err,doc)=>{
         res.render('book_room.ejs',{room:doc})
     })
-})
-
-router.get('/auction',(req,res)=>{
-    res.render('auction.ejs')
 })
 
 
@@ -149,7 +160,7 @@ router.post('/register_item_db',(req,res)=>{
         item_pic:req.body.item_pic,
         item_defect:req.body.scar_descrip,
         item_defect_pic:req.body.scar_pic,
-
+        user_id:req.body.user_id
     })
     Item.saveItem(data,(err)=>{
         if(err) console.log(err)
@@ -163,7 +174,9 @@ router.post('/open_room_db',(req,res)=>{
         time_open:req.body.time_open,
         time_close_door:req.body.time_close_door,
         time_finish:req.body.time_finish,
-        auction_day:req.body.auction_day
+        auction_day:req.body.auction_day,
+        item_id:req.body.item_id,
+        user_id:req.body.user_id
 
     })
     Room.saveRoom(data,(err)=>{
@@ -173,11 +186,16 @@ router.post('/open_room_db',(req,res)=>{
 })
 
 router.post('/edit_room',(req,res)=>{
-    const edit_id = req.body.edit_room_id
-    Room.findOne({_id:edit_id}).exec((err,doc)=>{
-        console.log(doc)
+    const reserve_id = req.body.reserve_id
+    let data = {
+        time_open:req.body.time_open,
+        time_close_door:req.body.time_close_door,
+        time_finish:req.body.time_finish,
+        auction_day:req.body.auction_day
+    }
+    Room.findByIdAndUpdate(reserve_id,data,{useFindAndModify:false}).exec(err =>{
+        res.redirect('/room')
     })
-
 })
 
 module.exports = router

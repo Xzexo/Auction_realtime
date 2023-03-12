@@ -72,8 +72,8 @@
         <div class="container">
 
             <!-- Logo -->
-            <a class="logo" href="#">
-                <img src="vie-dark/img/auc_icon.png" alt="logo">
+            <a class="logo" href="/user">
+                <img src="vie-dark/img/user.png" alt="Profile">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -85,13 +85,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="/user_edit">TORO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="/history">History</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="/" class="btn btn-custom" >Sign out</a></li>
@@ -125,7 +122,6 @@
                 <div class="row">
                     <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".5s">
                         <div class="item-box md-mb50">
-                            <span class="icon pe-7s-paint-bucket"></span>
                             <h6>Auction Room</h6>
                             <p>Find product that you need</p>
                             <a href="/user" class="butn bord curve mt-30">
@@ -135,7 +131,6 @@
                     </div>
                     <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".7s">
                         <div class="item-box md-mb50">
-                            <span class="icon pe-7s-phone"></span>
                             <h6>Register Item</h6>
                             <p>Register your product for sell in auction</p>
                             <a href="/register_item" class="butn bord curve mt-30">
@@ -145,7 +140,6 @@
                     </div>
                     <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".9s">
                         <div class="item-box">
-                            <span class="icon pe-7s-display1"></span>
                             <h6>Reserve room</h6>
                             <p>Reserve room to open your auction room</p>
                             <a href="/room" class="butn bord curve mt-30">
@@ -186,12 +180,12 @@
                   <div class="col-md-6 items graphic lg-mr wow fadeInUp" data-wow-delay=".4s">
                       <div class="item-img">
                           <a href="/<%= room._id%>" class="imago wow">
-                              <img src="vie-dark/img/arch/work/1.jpg" alt="image">
+                              <img src="vie-dark/img/egypt.jpg" alt="image">
                               <div class="item-img-overlay"></div>
                           </a>
                       </div>
                       <div class="cont">
-                          <h5 href="/<%= room._id%>">Item name</h5>
+                          <h5 href="/<%= room._id%>">Ancient Table from Egypt</h5>
                           <span class="tags main-color custom-font">
                             <a>Time open: <%= room.time_open%></a>
                             <a>Time close: <%= room.time_close_door%></a>
@@ -201,20 +195,6 @@
                       </div>
                   </div>
                   <% }) %>
-                  <!-- gallery item -->
-                  <div class="col-md-6 items web wow fadeInUp" data-wow-delay=".4s">
-                      <div class="item-img">
-                          <a href="vie-dark/project-details2.html" class="imago wow">
-                              <img src="vie-dark/img/arch/work/2.jpg" alt="image555">
-                              <div class="item-img-overlay"></div>
-                          </a>
-                      </div>
-                      <div class="cont">
-                          <h5>The Concept</h5>
-                          <span class="tags main-color custom-font"><a href="#0">Arch</a>, <a
-                                  href="#0">Interior</a></span>
-                      </div>
-                  </div>
 
 
               </div>
@@ -228,64 +208,7 @@
 
 
 
-        <!-- ==================== Start Footer ==================== -->
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="item md-mb50">
-                            <div class="title">
-                                <h5>Contact Us</h5>
-                            </div>
-                            <ul>
-                                <li>
-                                    <span class="icon pe-7s-map-marker"></span>
-                                    <div class="cont">
-                                        <h6>Officeal Address</h6>
-                                        <p>504 White St . Dawsonville,
-                                            GA 30534 , New York</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon pe-7s-mail"></span>
-                                    <div class="cont">
-                                        <h6>Email Us</h6>
-                                        <p>support@gmail.com</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon pe-7s-call"></span>
-                                    <div class="cont">
-                                        <h6>Call Us</h6>
-                                        <p>+87986451666</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-  
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="logo">
-                                <img src="" alt="">
-                            </div>
-                            <div class="social">
-                                <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#0"><i class="fab fa-twitter"></i></a>
-                                <a href="#0"><i class="fab fa-instagram"></i></a>
-                                <a href="#0"><i class="fab fa-youtube"></i></a>
-                            </div>
-                            <div class="copy-right">
-                                <p>© 2021, Vie Template. Made with passion by <a href="#0">UI-ThemeZ</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- ==================== End Footer ==================== -->
 
 
     </div>

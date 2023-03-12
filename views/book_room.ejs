@@ -68,37 +68,34 @@
     <!-- ==================== Start Navbar ==================== -->
 
     <nav class="navbar navbar-expand-lg">
-      <div class="container">
+        <div class="container">
 
-          <!-- Logo -->
-          <a class="logo" href="#">
-              <img src="vie-dark/img/auc_icon.png" alt="logo">
-          </a>
+            <!-- Logo -->
+            <a class="logo" href="/user">
+                <img src="vie-dark/img/user.png" alt="Profile">
+            </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"><i class="fas fa-bars"></i></span>
-          </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"><i class="fas fa-bars"></i></span>
+            </button>
 
-          <!-- navbar links -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">History</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Cart</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="/" class="btn btn-custom" >Sign out</a></li>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user_edit">TORO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history">History</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/" class="btn btn-custom" >Sign out</a></li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
     <!-- ==================== End Navbar ==================== -->
@@ -139,50 +136,75 @@
 									<form  method="post" action="/edit_room">
 			
 										<div class="controls">
-			
-                      <div class="row">
-												<div class="col-lg-12">
-													<div class="form-group">
-														<h6>Room</h6>
-														<input  type="text" name="edit_room_id" value="<%=room._id%>"
-														>
-													</div>
-												</div>
-											<div class="row">
-												<div class="col-lg-12">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <h6>Room</h6>
+                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+												<div class="col-lg-6">
 													<div class="form-group">
 														<h6>Time Open</h6>
 														<input id="time_open" type="time" name="time_open" value="<%=room.time_open%>"
 														>
 													</div>
 												</div>
-												<div class="col-lg-12">
+												<div class="col-lg-6">
 													<div class="form-group">
 														<h6>Time Close</h6>
 														<input id="time_close_door" type="time" name="time_close_door" value="<%=room.time_close_door%>"
 														>
 													</div>
 												</div>
-												<div class="col-lg-12">
+												<div class="col-lg-6">
 													<div class="form-group">
 														<h6>Time Finish</h6>
 														<input id="time_finish" type="time" name="time_finish" value="<%=room.time_finish%>"
 														>
 													</div>
 												</div>
-												<div class="col-12">
+												<div class="col-lg-6">
 													<div class="form-group">
 														<h6>Date</h6>
 														<input id="auction_day" type="date" name="auction_day" value="<%=room.auction_day%>"
 															>
 													</div>
 												</div>
-												<div class="col-12">
+											</div> 
+										</div>
+                                        <div class="controls">
+			
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <h6>Item</h6>
+                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Description</h6>
+														<input id="des" type="textarea" name="des" placeholder="Description"
+														>
+													</div>
+												</div>
+                                                <div class="col-lg-6">
+													<div class="text-center">
+														<input type="button" name="upload" id="upload" class="butn light mt-30 full-width" value = "Upload your item" >
+													</div>
+												</div>
+												<div class="col-lg-12">
 													<div class="text-center">
 														<input type="submit" name="submit" id="submit" class="butn light mt-30 full-width" value = "Reserve" >
 													</div>
 												</div>
-											</div>
+											</div> 
 										</div>
 									</form>
 								</div>
@@ -200,64 +222,7 @@
 
 
 
-        <!-- ==================== Start Footer ==================== -->
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="item md-mb50">
-                            <div class="title">
-                                <h5>Contact Us</h5>
-                            </div>
-                            <ul>
-                                <li>
-                                    <span class="icon pe-7s-map-marker"></span>
-                                    <div class="cont">
-                                        <h6>Officeal Address</h6>
-                                        <p>504 White St . Dawsonville,
-                                            GA 30534 , New York</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon pe-7s-mail"></span>
-                                    <div class="cont">
-                                        <h6>Email Us</h6>
-                                        <p>support@gmail.com</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="icon pe-7s-call"></span>
-                                    <div class="cont">
-                                        <h6>Call Us</h6>
-                                        <p>+87986451666</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-  
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="logo">
-                                <img src="" alt="">
-                            </div>
-                            <div class="social">
-                                <a href="#0"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#0"><i class="fab fa-twitter"></i></a>
-                                <a href="#0"><i class="fab fa-instagram"></i></a>
-                                <a href="#0"><i class="fab fa-youtube"></i></a>
-                            </div>
-                            <div class="copy-right">
-                                <p>© 2021, Vie Template. Made with passion by <a href="#0">UI-ThemeZ</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- ==================== End Footer ==================== -->
 
 
     </div>
