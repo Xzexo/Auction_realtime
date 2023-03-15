@@ -117,8 +117,13 @@ router.get("/room",(req,res)=>{
         res.render('room.ejs',{room:doc})
     })
 })
+
 router.get('/auction',(req,res)=>{
     res.render('auction.ejs')
+})
+
+router.get('/payment',(req,res)=>{
+    res.render('payment.ejs')
 })
 
 router.get("/:id",(req,res)=>{
