@@ -28,27 +28,26 @@ const upload = multer({
     storage:storage
 })
 
-
+//! Home
 router.get("/",(req,res)=>{
     Room.find().exec((err,doc)=>{
         res.render('index.ejs',{room:doc})
     })
 })
 
-router.get("/register_item",(req,res)=>{
-    res.render('register_item.ejs')
+//! User
+router.get('/user',(req,res)=>{
+    Room.find().exec((err,doc)=>{
+        res.render('users.ejs',{room:doc})
+    })
+})
+router.get('/user_edit',(req,res)=>{
+    res.render('user_edit.ejs')
 })
 
-router.get("/room",(req,res)=>{
-    res.render('room.ejs')
-})
-router.get("/book_room",(req,res)=>{
-    res.render('book_room.ejs')
-})
 
-router.get('/register',(req,res)=>{
-    res.render('register.ejs')
-})
+
+//! Login 
 router.post('/check',async (req,res)=>{
     const user_name = req.body.username
     const pass_wd = req.body.passwd
@@ -75,29 +74,64 @@ router.post('/check',async (req,res)=>{
     }
 
 })
-router.get('/user_edit',(req,res)=>{
-    res.render('user_edit.ejs')
+
+router.get('/login',(req,res)=>{
+    res.render('login.ejs')
 })
+
+router.get('/register',(req,res)=>{
+    res.render('register.ejs')
+})
+
+
+//! Admin
 router.get('/admin',(req,res)=>{
-    res.render('admin.ejs')
+    Room.find().exec((err,doc)=>{
+        res.render('admin.ejs',{room:doc})
+    })
 })
 router.get('/admin_add',(req,res)=>{
     res.render('admin_add_room.ejs')
 })
-router.get('/login',(req,res)=>{
-    res.render('login.ejs')
+
+
+//! Feature
+router.get("/user",(req,res)=>{
+    res.render('users.ejs')
 })
+
+router.get("/history",(req,res)=>{
+    res.render('history.ejs')
+})
+
+router.get("/history_check",(req,res)=>{
+    res.render('history_check.ejs')
+})
+
+router.get("/register_item",(req,res)=>{
+    res.render('register_item.ejs')
+})
+
+router.get("/room",(req,res)=>{
+    Room.find().exec((err,doc)=>{
+        res.render('room.ejs',{room:doc})
+    })
+})
+
 router.get('/auction',(req,res)=>{
     res.render('auction.ejs')
+})
+
+router.get('/payment',(req,res)=>{
+    res.render('payment.ejs')
 })
 
 router.get("/:id",(req,res)=>{
     const room_id = req.params.id
     Room.findOne({_id:room_id}).exec((err,doc)=>{
-        res.render('before.ejs',{room:doc})
+        res.render('book_room.ejs',{room:doc})
     })
 })
-
 
 
 
@@ -131,7 +165,7 @@ router.post('/register_item_db',(req,res)=>{
         item_pic:req.body.item_pic,
         item_defect:req.body.scar_descrip,
         item_defect_pic:req.body.scar_pic,
-
+        user_id:req.body.user_id
     })
     Item.saveItem(data,(err)=>{
         if(err) console.log(err)
@@ -145,12 +179,27 @@ router.post('/open_room_db',(req,res)=>{
         time_open:req.body.time_open,
         time_close_door:req.body.time_close_door,
         time_finish:req.body.time_finish,
-        auction_day:req.body.auction_day
+        auction_day:req.body.auction_day,
+        item_id:req.body.item_id,
+        user_id:req.body.user_id
 
     })
     Room.saveRoom(data,(err)=>{
         if(err) console.log(err)
         res.redirect('/admin')
+    })
+})
+
+router.post('/edit_room',(req,res)=>{
+    const reserve_id = req.body.reserve_id
+    let data = {
+        time_open:req.body.time_open,
+        time_close_door:req.body.time_close_door,
+        time_finish:req.body.time_finish,
+        auction_day:req.body.auction_day
+    }
+    Room.findByIdAndUpdate(reserve_id,data,{useFindAndModify:false}).exec(err =>{
+        res.redirect('/room')
     })
 })
 

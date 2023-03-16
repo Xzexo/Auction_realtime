@@ -1,134 +1,245 @@
 <!DOCTYPE html>
-<html>
+<html lang="zxx">
+
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="mystyle.css">
-<style type="text/css">
-.month {
-  padding: 25px 25px;
-  width: 100%;
-  background: #ffffff;
-  text-align: center;
-}
 
-.month ul {
-  margin: 0;
-  padding: 0;
-}
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+    <meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+    <meta name="author" content="" />
 
-.month ul li {
-  color: black;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
+    <!-- Title  -->
+    <title>Bidlersegde</title>
 
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
 
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+     rel="stylesheet">
+    <link
+     href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+     rel="stylesheet">
 
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #ddd;
-}
 
-.weekdays li {
-  display: inline-block;
-  width: 12.6%;
-  color: #666;
-  text-align: center;
-}
+    <!-- Plugins -->
+    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
 
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="vie-dark/css/style.css" />
 
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 12.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
-}
-
-.days li .active {
-  padding: 5px;
-  background: #1abc9c;
-  color: white !important
-}
-
-</style>
 </head>
-<body>
 
-<div class="topnav">
-  <a href="/users">Auction Rooms</a>
-  <a class="nav-link btn-custom1" href="/register_item" ></li>Register Items</a>
-  <a class="nav-link btn-custom1" href="/room" ></li>Book Rooms</a>
-  <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-  </div>
-</div>
+<body class="position-r">
 
-<div class="content">
-  <fieldset style="border-radius: 9px; background-color: #96DAA6;">
-    <legend>Choose:</legend>
 
-    <div class="row">
-      <div class="column left-35">
-      </div>
-      <div class="column right-65">
-        <form  action="/"  method="post">
-        <div class="row">
-          <label for="fname" style="margin-left: 10px; margin-right: 41px;">Time Open:</label>
-          <input type="time" id="fname" name="time_open" value="John">
-        </div>
-        <div class="row">
-          <label for="fname" style="margin-left: 10px; margin-right: 40px;">Time Close:</label>
-          <input type="time" id="fname" name="time_close" value="John">
-        </div>
-        <div class="row">
-          <label for="fname" style="margin-left: 10px; margin-right: 38px;">Time Finish:</label>
-          <input type="time" id="fname" name="time_finish" value="John">
-        </div>
-        <div class="row">
-          <label for="fname" style="margin-left: 10px; margin-right: 41px;">Date:</label>
-          <input type="date" id="dateofbirth" name="date" value="John">
-        </div>
-        <div class="row">
-          <label for="fname" style="margin-left: 10px; margin-right: 20px;">Choose Items:</label>
-          <select name="cars" id="cars" >
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-        </div>
-        
-        <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Submit" >
-        </form>
-      </div>
+
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
     </div>
 
-  </fieldset>
+    <div id="preloader">
+    </div>
+
+    <!-- ==================== End Loading ==================== -->
+
+    
+
+    <!-- ==================== Start cursor ==================== -->
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+    <!-- ==================== End cursor ==================== -->
 
 
-</div>
 
+    <!-- ==================== Start Navbar ==================== -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="logo" href="/user">
+                <img src="vie-dark/img/user.png" alt="Profile">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user_edit">TORO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history">History</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/" class="btn btn-custom" >Sign out</a></li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==================== End Navbar ==================== -->
+
+
+    <div class="main-content">
+
+
+ <!-- ==================== Start About ==================== -->
+
+ <section class="about-ar section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 valign">
+				<div class="img">
+					<div class="bg-img bg-fixed hero-bg" data-background="img/arch/hero.jpg"></div>
+					<div class="exp valign text-center">
+						<div class="full-width">
+							<h1 class="wow fadeIn" data-wow-delay=".3s">Reserve Room</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-8 valign">
+
+				<section class="contact-sec style2 section-padding position-re bg-img" data-background="img/patrn1.png" data-scroll-index="7">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6">
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-lg-10">
+
+								<div class="form wow fadeInUp" data-wow-delay=".5s">
+
+									<form  method="post" action="/edit_room">
+			
+										<div class="controls">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <h6>Room</h6>
+                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Time Open</h6>
+														<input id="time_open" type="time" name="time_open" value="<%=room.time_open%>"
+														>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Time Close</h6>
+														<input id="time_close_door" type="time" name="time_close_door" value="<%=room.time_close_door%>"
+														>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Time Finish</h6>
+														<input id="time_finish" type="time" name="time_finish" value="<%=room.time_finish%>"
+														>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Date</h6>
+														<input id="auction_day" type="date" name="auction_day" value="<%=room.auction_day%>"
+															>
+													</div>
+												</div>
+											</div> 
+										</div>
+                                        <div class="controls">
+			
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <h6>Item</h6>
+                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>"
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+												<div class="col-lg-6">
+													<div class="form-group">
+														<h6>Description</h6>
+														<input id="des" type="textarea" name="des" placeholder="Description"
+														>
+													</div>
+												</div>
+                                                <div class="col-lg-6">
+													<div class="text-center">
+														<input type="button" name="upload" id="upload" class="butn light mt-30 full-width" value = "Upload your item" >
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="text-center">
+														<input type="submit" name="submit" id="submit" class="butn light mt-30 full-width" value = "Reserve" >
+													</div>
+												</div>
+											</div> 
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ==================== End About ==================== -->
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="vie-dark/js/plugins.js"></script>
+
+    <!-- custom scripts -->
+    <script src="vie-dark/js/scripts.js"></script>
 
 </body>
+
 </html>

@@ -1,65 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Real time Chat App</title>
+<html lang="zxx">
 
+<head>
+
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+    <meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+    <meta name="author" content="" />
+
+    <!-- Title  -->
+    <title>Bidlersegde</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
+
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+     rel="stylesheet">
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="title">
-        <h3>Realtime Chat Room</h3>
-      </div>
+     href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+     rel="stylesheet">
 
-      <div class="card">
-        <div class="card-header">Anonymous</div>
-        <div class="card-body">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              placeholder="Change your username"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-warning" type="button" id="usernameBtn">
-                Change
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="message-box">
-          <ul class="list-group list-group-flush" id="message-list"></ul>
-          <div class="info"></div>
-        </div>
+    <!-- Plugins -->
+    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
 
-        <div class="card-footer">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              id="message"
-              placeholder="Send new message"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-success" type="button" id="messageBtn">
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="vie-dark/css/style.css" />
+
+</head>
+
+<body class="position-r">
+
+
+
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+    <div id="preloader">
+    </div>
 
-    <!-- chat -->
-    <script src="js/chatroom.js"></script>
-  </body>
+    <!-- ==================== End Loading ==================== -->
+
+    
+
+    <!-- ==================== Start cursor ==================== -->
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+    <!-- ==================== End cursor ==================== -->
+
+
+
+ <!-- ==================== Start About ==================== -->
+
+ <section class="about-ar section-padding ">
+	<div class="container">
+		<div class="row">
+            <div class="col-lg-7 ">
+                <div class="text-center">
+                    <h6 class="ls3 text-u">Ancient Egypt Table</h6>
+                </div>
+                <div class="exp text-center">
+                    <div class="full-width">
+                        <img src="vie-dark/img/live-stream.png">
+                    </div>
+                </div>
+                
+                    <div class="row">
+                        <div class="col-3 valign">
+                            <div class="form-group">
+                                <div class="text-center">
+                                    <a href="#" class="butn light mt-30 full-width">
+                                        <h6 class="ls3 text-u text-center">Bid</h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5 valign">
+                            <div class="text-center">
+                                <a href="#" class="butn light mt-30 full-width">
+                                    <h6 class="ls3 text-u">Bid minimum</h6>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3 valign">
+                            <div class="text-center">
+                                <a href="/payment" class="butn light mt-30 full-width">
+                                    <h6 class="ls3 text-u">ฺBuy maximum</h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+			<div class="col-lg-5 valign">
+
+				<section class="contact-sec style2 section-padding position-re bg-img" >
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-6 col-md-6">
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-lg-10">
+
+								<div class="form wow fadeInUp">
+                                        <div class="controls">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <h6>chat</h6>
+                                                    <input  type="hidden" name="reserve_id" value=""
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+												<div class="col-lg-12 ">
+													<div class="form-group">
+                                                        <input id="des" type="text" name="des" placeholder="send message">
+                                                        <div class="input-group-append">
+                                                            <button href="#" class="butn light mt-30 full-width">
+                                                                <h6 class="ls text-center">send</h6>
+                                                            </button>
+                                                        </div>
+													</div>
+												</div>
+											</div> 
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ==================== End About ==================== -->
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="vie-dark/js/plugins.js"></script>
+
+    <!-- custom scripts -->
+    <script src="vie-dark/js/scripts.js"></script>
+
+</body>
+
 </html>

@@ -1,144 +1,167 @@
-
 <!DOCTYPE html>
+<html lang="zxx">
 <head>
-  <meta charset="UTF-8">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+    <meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+    <meta name="author" content="" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title  -->
+    <title>Vie</title>
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<html>
-<style>
-    /*set border to the form*/
-     
-    form {
-        border: 3px solid #f1f1f1;
-    }
-    /*assign full width inputs*/
-    
-    input[type=text],
-    input[type=password],
-    input[type=addusername],
-    input[type=addpassword],
-    input[type=firstname],
-    input[type=lastname],
-    input[type=citiid],
-    input[type=email],
-    input[type=phone],
-    input[type=conpassword] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-    /* set a hover effect for the button*/
-     
-    button:hover {
-        opacity: 0.8;
-    }
-    /*set extra style for the cancel button*/
-     
-    .cancelbtn {
-        width: auto;
-        padding: 10px 18px;
-        background-color: #f44336;
-    }
-    /*centre the display image inside the container*/
-     
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
-    /*set image properties*/
-     
-    img.avatar {
-        width: 40%;
-        border-radius: 50%;
-    }
-    /*set padding to the container*/
-    .col{
-        width: 800px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    .container {
-        width: auto;
-        padding: 16px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    header{
-        text-align: center;
-        color: green;
-        font-family: 'Comic Sans';
-    }
-</style>
- 
-<header>
-    <h1>
-        Bidsleredge
-    </h1>
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="vie-dark/css/style.css" />
+
+
 </header>
-<body>
-        <div class="col">
-        <div class="container">
-            <form name="loginform" id="loginform" method ="post" action="/register_db">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" id="login_user_name" maxlength="20" required>
+<body class="position-r">
+ <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+
+    <div id="preloader">
+    </div>
+
+<!-- ==================== End Loading ==================== -->
+
+        <!-- ==================== Start Contact ==================== -->
+
+        <section class="contact-sec style2 section-padding position-re bg-img" data-background="img/patrn1.png" data-scroll-index="7">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="sec-head  text-center">
+                            <h2 class="wow fadeIn" data-wow-delay=".3s">Regis<span class="color-font">ter</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="form wow fadeInUp" data-wow-delay=".5s">
+                            <form name="loginform" id="loginform" method ="post" action="/register_db">
+    
+                                <div class="messages"></div>
+    
+                                <div class="controls">
+    
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Username</b></label>
+                                                <input type="text" placeholder="Enter Username" name="username" id="login_user_name" maxlength="20" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>First name</b></label>
+                                                <input type="firstname" placeholder="Enter First Name" name="firstname" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Last Name</b></label>
+                                                <input type="lastname" placeholder="Enter Last Name" name="lastname" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Citizen ID</b></label>
+                                                <input type="citiid" placeholder="Enter ID" name="critizenID" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Email</b></label>
+                                                <input type="email" placeholder="Enter Email" name="email" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Phone</b></label>
+                                                <input type="phone" placeholder="Enter your phone number" name="phone" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Password</b></label>
+                                                <input type="password" placeholder="Enter Password" name="passwd" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label><b>Confirm Password</b></label>
+                                                <input type="password" placeholder="Enter Password" name="cpasswd" id="login_user_password" maxlength="25" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="col-12">
+                                            <div class="text-center">
+                                            <input type="submit" class="butn light mt-30 full-width" value = "Register" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- ==================== End Contact ==================== -->
+
  
-            <label><b>First name</b></label>
-            <input type="firstname" placeholder="Enter First Name" name="firstname" id="login_user_password" maxlength="25" required>
+<!-- jQuery -->
+<script src="vie-dark/js/jquery-3.0.0.min.js"></script>
+<script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
 
-            <label><b>Last Name</b></label>
-            <input type="lastname" placeholder="Enter Last Name" name="lastname" id="login_user_password" maxlength="25" required>
+<!-- plugins -->
+<script src="vie-dark/js/plugins.js"></script>
 
-            <label><b>Citizen ID</b></label>
-            <input type="citiid" placeholder="Enter ID" name="critizenID" id="login_user_password" maxlength="25" required>
-
-            <label><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" id="login_user_password" maxlength="25" required>
-
-            <label><b>Phone</b></label>
-            <input type="phone" placeholder="Enter your phone number" name="phone" id="login_user_password" maxlength="25" required>
-
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="passwd" id="login_user_password" maxlength="25" required>
-
-            <label><b>Confirm Password</b></label>
-            <input type="password" placeholder="Enter Password" name="cpasswd" id="login_user_password" maxlength="25" required>
-
-            <input type="submit" class ="btn btn-success" value = "submit" name='submit' >
-            </form>
-
-
-        </div>  
-        </div>
- 
-
+<!-- custom scripts -->
+<script src="vie-dark/js/scripts.js"></script>
 </body>
  
 </html>
-
-<script>
-function checklogin(){
-var login_user_name =$("#login_user_name").val();
-var login_user_password =$("#login_user_password").val();
-if(login_user_name.length >= 5 && login_user_name.length <= 10 && login_user_password.length >= 5 && login_user_password.length <=10){
-    $("#loginform").submit();}
-    else{
-    alert("ตรวจสอบข้อมูล")
-        }
-
-}
-
-</script> 

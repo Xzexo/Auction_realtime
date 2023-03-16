@@ -19,7 +19,9 @@ let roomSchema = mongoose.Schema({
     time_open:String,
     time_close_door:String,
     time_finish:String,
-    auction_day:Date
+    auction_day:Date,
+    user_id:String,
+    item_id:String
 })
 
 //create model
