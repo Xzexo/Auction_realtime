@@ -78,6 +78,43 @@
 <!-- Core Style Css -->
 <link rel="stylesheet" href="vie-dark/css/style.css" />
 
+
+
+
+<!---------------------- upload pictures-------------------->
+<link
+      class="jsbin"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
+    ></script>
+    <meta charset="utf-8" />
+    <title>JS Bin</title>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+      article,
+      aside,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+    </style>
+
 </head>
 <body>
   <!-- ==================== Start Loading ==================== -->
@@ -191,7 +228,6 @@
   <div class="main-content">
 
     <!-- ==================== Start Contact ==================== -->
-
     <section class="contact section-padding">
         <div class="container">
             <div class="row">
@@ -199,23 +235,24 @@
                     <div class="cont-info">
                         <h4 class="fw-700 color-font mb-50">Import pictures items</h4>
                         <!--Column1 add picc-->
-                        <div class="col">
-                          <div>
-                            <div class="mb-4 d-flex justify-content-center">
-                                <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                alt="example placeholder" style="width: 300px;" />
-                            </div>
+                        <div class="mb-4 d-flex justify-content-center">
+                          <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                          alt="example placeholder" style="width: 300px;" />
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <form action="/stats" enctype="multipart/form-data" method="post">
                             <div class="d-flex justify-content-center">
-                                <div class="btn btn-primary btn-rounded">
-                                    <input type="file" name="item_pic" id="item_pic" >
-                                    <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                                    <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
-                                </div>
+                              <div class="btn btn-primary btn-rounded">
+                                  <input type="file" name="item_pic" id="item_pic" >
+                                  <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                                  <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
+                              </div>
                             </div>
-                          </div>
-                        </div>                 
+                          </form>
+                        </div>                  
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                   <div class="form md-mb50">
 
@@ -252,13 +289,17 @@
                               <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                               alt="example placeholder" style="width: 300px;" />
                           </div>
-                          <div class="d-flex justify-content-center">
+
+
+                          <form action="/stats" enctype="multipart/form-data" method="post">
+                            <div class="d-flex justify-content-center">
                               <div class="btn btn-primary btn-rounded">
                                   <input type="file" name="item_pic" id="item_pic" >
                                   <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
                                   <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
                               </div>
-                          </div>
+                            </div>
+                          </form>
                         </div>
                       </div>                 
                   </div>
