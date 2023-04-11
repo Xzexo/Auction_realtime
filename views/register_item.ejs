@@ -174,15 +174,12 @@
                           alt="example placeholder" style="width: 300px;" />
                         </div>
                         <div class="d-flex justify-content-center">
-                          <form action="/stats" enctype="multipart/form-data" method="post">
+                          <form action="/register_item_db" enctype="multipart/form-data" method="post">
                             <div class="d-flex justify-content-center">
                               <div class="btn btn-primary btn-rounded">
                                   <input type="file" name="item_pic" id="item_pic" >
-                                  <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                                  <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
                               </div>
                             </div>
-                          </form>
                         </div>                  
                     </div>
                 </div>
@@ -191,22 +188,20 @@
                   <div class="form md-mb50">
 
                       <h4 class="fw-700 color-font mb-50">Item Information</h4>
-                      <form id="contact-form" method="post" action="contact.php">
 
                           <div class="messages"></div>
 
                           <div class="controls">
 
                               <div class="form-group">
-                                  <input id="form_name" type="text" name="name" placeholder="Item Name"
+                                  <input id="form_name" type="text" name="item_name" placeholder="Item Name"
                                       required="required">
                               </div>
                               <div class="form-group">
-                                  <textarea id="form_message" name="message" placeholder="Item Description" rows="4"
+                                  <textarea id="form_message" name="item_descrip" placeholder="Item Description" rows="4"
                                       required="required"></textarea>
                               </div>
                           </div>
-                      </form>
                   </div>
                 </div>
             </div>
@@ -223,17 +218,13 @@
                               <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                               alt="example placeholder" style="width: 300px;" />
                           </div>
-
-
-                          <form action="/stats" enctype="multipart/form-data" method="post">
                             <div class="d-flex justify-content-center">
                               <div class="btn btn-primary btn-rounded">
-                                  <input type="file" name="item_pic" id="item_pic" >
+                                  <input type="file" name="scar_pic" id="scar_pic" >
                                   <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
                                   <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
                               </div>
                             </div>
-                          </form>
                         </div>
                       </div>                 
                   </div>
@@ -242,7 +233,6 @@
                 <div class="form md-mb50">
 
                     <h4 class="fw-700 color-font mb-50">Type of scar</h4>
-                    <form id="contact-form" method="post" action="contact.php">
 
                         <div class="messages"></div>
 
@@ -253,11 +243,10 @@
                                     required="required">
                             </div>
                             <div class="form-group">
-                                <textarea id="form_message" name="message" placeholder="Scar Description" rows="4"
+                                <textarea id="form_message" name="scar_descrip" placeholder="Scar Description" rows="4"
                                     required="required"></textarea>
                             </div>
                         </div>
-                    </form>
                 </div>
               </div>
           </div>
@@ -266,30 +255,27 @@
           <div class="row">
             <div class="col-lg-5 offset-lg-1">
               <div class="form md-mb50">
-                  <form id="contact-form" method="post" action="contact.php">
-                  </form>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form md-mb50">
 
                   <h4 class="fw-700 color-font mb-50">Price</h4>
-                  <form id="contact-form" method="post" action="contact.php">
 
                       <div class="messages"></div>
 
                       <div class="controls">
 
                           <div class="form-group">
-                              <input id="form_name" type="number" name="name" placeholder="Begin price"
+                              <input id="form_name" type="number" name="begin_price" placeholder="Begin price"
                                   required="required">
                           </div>
                           <div class="form-group">
-                            <input id="form_name" type="number" name="name" placeholder="Minimum bid price"
+                            <input id="form_name" type="number" name="min_bid" placeholder="Minimum bid price"
                                 required="required">
                         </div>
                         <div class="form-group">
-                          <input id="form_name" type="number" name="name" placeholder="Maximum selling price"
+                          <input id="form_name" type="number" name="min_sell" placeholder="Maximum selling price"
                               required="required">
                         </div>                
                       </div>
