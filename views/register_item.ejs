@@ -163,95 +163,78 @@
 
     <!-- ==================== Start Contact ==================== -->
     <section class="contact section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="cont-info">
-                        <h4 class="fw-700 color-font mb-50">Import pictures items</h4>
-                        <!--Column1 add picc-->
-                        <div class="mb-4 d-flex justify-content-center">
-                          <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                          alt="example placeholder" style="width: 300px;" />
-                        </div>
-                        <div class="d-flex justify-content-center">
-                          <form action="/register_item_db" enctype="multipart/form-data" method="post">
-                            <div class="d-flex justify-content-center">
-                              <div class="btn btn-primary btn-rounded">
-                                  <input type="file" name="item_pic" id="item_pic" >
-                              </div>
-                            </div>
-                        </div>                  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 offset-lg-1">
+            <div class="cont-info">
+              <form action="/register_item_db" method="post">
+                <h4 class="fw-700 color-font mb-50">Import pictures items</h4>
+    
+                <!-- Column1 add pic -->
+                <div class="mb-4 d-flex justify-content-center">
+                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 300px;" />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <div class="d-flex justify-content-center">
+                    <div class="btn btn-primary btn-rounded">
+                      <input type="file" name="item_pic" id="item_pic">
                     </div>
-                </div>
-
-                <div class="col-lg-6">
-                  <div class="form md-mb50">
-
-                      <h4 class="fw-700 color-font mb-50">Item Information</h4>
-
-                          <div class="messages"></div>
-
-                          <div class="controls">
-
-                              <div class="form-group">
-                                  <input id="form_name" type="text" name="item_name" placeholder="Item Name"
-                                      required="required">
-                              </div>
-                              <div class="form-group">
-                                  <textarea id="form_message" name="item_descrip" placeholder="Item Description" rows="4"
-                                      required="required"></textarea>
-                              </div>
-                          </div>
                   </div>
                 </div>
+              </div>
             </div>
-
-            <!-----------------------------------scar description------------------------------------->
-            <div class="row">
-              <div class="col-lg-5 offset-lg-1">
-                  <div class="cont-info">
-                      <h4 class="fw-700 color-font mb-50">Import Pictures Scar</h4>
-                      <!--Column1 add picc-->
-                      <div class="col">
-                        <div>
-                          <div class="mb-4 d-flex justify-content-center">
-                              <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                              alt="example placeholder" style="width: 300px;" />
-                          </div>
-                            <div class="d-flex justify-content-center">
-                              <div class="btn btn-primary btn-rounded">
-                                  <input type="file" name="scar_pic" id="scar_pic" >
-                                  <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                                  <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
-                              </div>
-                            </div>
-                        </div>
-                      </div>                 
+    
+            <div class="col-lg-6">
+              <div class="form md-mb50">
+                <h4 class="fw-700 color-font mb-50">Item Information</h4>
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-group">
+                    <input id="item_name" type="text" name="item_name" placeholder="Item Name" required="required">
                   </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form md-mb50">
-
-                    <h4 class="fw-700 color-font mb-50">Type of scar</h4>
-
-                        <div class="messages"></div>
-
-                        <div class="controls">
-
-                            <div class="form-group">
-                                <input id="form_name" type="text" name="name" placeholder="Your Scar"
-                                    required="required">
-                            </div>
-                            <div class="form-group">
-                                <textarea id="form_message" name="scar_descrip" placeholder="Scar Description" rows="4"
-                                    required="required"></textarea>
-                            </div>
-                        </div>
+                  <div class="form-group">
+                    <textarea id="item_description" name="item_description" placeholder="Item Description" rows="4" required="required"></textarea>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
-
-          <!-------------------------------price for bid------------------------------>
+    
+          <div class="row">
+            <div class="col-lg-5 offset-lg-1">
+              <div class="cont-info">
+                <h4 class="fw-700 color-font mb-50">Import Pictures Scar</h4>
+                <!-- Column1 add pic -->
+                <div class="col">
+                  <div>
+                    <div class="mb-4 d-flex justify-content-center">
+                      <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 300px;" />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <div class="btn btn-primary btn-rounded">
+                        <input type="file" name="scar_pic" id="scar_pic">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form md-mb50">
+                <h4 class="fw-700 color-font mb-50">Type of scar</h4>
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-group">
+                    <input id="scar_name" type="text" name="scar_name" placeholder="Your Scar" required="required">
+                  </div>
+                  <div class="form-group">
+                    <textarea id="scar_description" name="scar_description" placeholder="Scar Description" rows="4" required="required"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
           <div class="row">
             <div class="col-lg-5 offset-lg-1">
               <div class="form md-mb50">
@@ -259,35 +242,29 @@
             </div>
             <div class="col-lg-6">
               <div class="form md-mb50">
-
-                  <h4 class="fw-700 color-font mb-50">Price</h4>
-
-                      <div class="messages"></div>
-
-                      <div class="controls">
-
-                          <div class="form-group">
-                              <input id="form_name" type="number" name="begin_price" placeholder="Begin price"
-                                  required="required">
-                          </div>
-                          <div class="form-group">
-                            <input id="form_name" type="number" name="min_bid" placeholder="Minimum bid price"
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                          <input id="form_name" type="number" name="min_sell" placeholder="Maximum selling price"
-                              required="required">
-                        </div>                
-                      </div>
-                      <div class="controls">
-                        <button type="submit" class="butn bord"><span>Submit</span></button>
-                        <button type="submit" class="butn bord"><span>More Items</span></button>
-                      </div>
-                  </form>
-              </div>
+                <h4 class="fw-700 color-font mb-50">Price</h4>
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-group">
+                    <input id="begin_price" type="number" name="begin_price" placeholder="Begin price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="min_bid" type="number" name="min_bid" placeholder="Minimum bid price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="min_sell" type="number" name="min_sell" placeholder="Maximum selling price" required="required">
+                  </div>
+                </div>
+                <div class="controls">
+                  <button type="submit" class="butn bord"><span>Submit</span></button>
+                  <button type="" class="butn bord"><span>More Items</span></button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+    </div>
   </div>
 
 
@@ -315,28 +292,29 @@
   <!-- custom scripts -->
   <script src="vie-dark/js/scripts.js"></script>
 
+  <script>  
+    $(document).ready(function(){  
+          $('#insert').click(function(){  
+              var image_name = $('#image').val();  
+              if(image_name == '')  
+              {  
+                    alert("Please Select Image");  
+                    return false;  
+              }  
+              else  
+              {  
+                    var extension = $('#image').val().split('.').pop().toLowerCase();  
+                    if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                    {  
+                        alert('Invalid Image File');  
+                        $('#image').val('');  
+                        return false;  
+                    }  
+              }  
+          });  
+    });  
+    </script>
 
 </body>
 </html>
 
-<script>  
-$(document).ready(function(){  
-      $('#insert').click(function(){  
-          var image_name = $('#image').val();  
-          if(image_name == '')  
-          {  
-                alert("Please Select Image");  
-                return false;  
-          }  
-          else  
-          {  
-                var extension = $('#image').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
-                {  
-                    alert('Invalid Image File');  
-                    $('#image').val('');  
-                    return false;  
-                }  
-          }  
-      });  
-});  
