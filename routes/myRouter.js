@@ -10,6 +10,7 @@ const {body, validationResult} = require('express-validator')
 const User = require('../models/user')
 const Item = require('../models/item')
 const Room = require('../models/room')
+const Trans = require('../models/transaction')
 
 //!upload file
 const multer = require('multer')
@@ -118,6 +119,10 @@ router.get("/room",(req,res)=>{
     })
 })
 
+router.get('/testchat',(req,res)=>{
+    res.render('Testchat.ejs')
+})
+
 router.get('/auction',(req,res)=>{
     res.render('auction.ejs')
 })
@@ -126,12 +131,12 @@ router.get('/payment',(req,res)=>{
     res.render('payment.ejs')
 })
 
-router.get("/:id",(req,res)=>{
-    const room_id = req.params.id
-    Room.findOne({_id:room_id}).exec((err,doc)=>{
-        res.render('book_room.ejs',{room:doc})
-    })
-})
+//router.get("/:id",(req,res)=>{
+//    const room_id = req.params.id
+//   Room.findOne({_id:room_id}).exec((err,doc)=>{
+//        res.render('book_room.ejs',{room:doc})
+//    })
+//})
 
 
 

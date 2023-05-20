@@ -17,156 +17,304 @@
   </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-
-
-
 </style>
+
+<!--contact vie-dark-->
+<!-- Metas -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+<meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+<meta name="author" content="" />
+
+
+
+
+<!-- Title  -->
+<title>BidslerEdge</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="vie-dark/img/favicon.ico" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+<!-- Plugins -->
+<link rel="stylesheet" href="vie-dark/css/plugins.css" />
+
+<!-- Core Style Css -->
+<link rel="stylesheet" href="vie-dark/css/style.css" />
+
+<!------------------index 5----------------------->
+<!-- Metas -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
+<meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
+<meta name="author" content="" />
+
+<!-- Title  -->
+<title>BidslerEdge</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="vie-dark/img/favicon.ico" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+<!-- Plugins -->
+<link rel="stylesheet" href="vie-dark/css/plugins.css" />
+
+<!-- Core Style Css -->
+<link rel="stylesheet" href="vie-dark/css/style.css" />
+
+
+
+
+<!---------------------- upload pictures-------------------->
+<link
+      class="jsbin"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
+    ></script>
+    <meta charset="utf-8" />
+    <title>JS Bin</title>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+      article,
+      aside,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+    </style>
+
 </head>
 <body>
-  <!--Top-->
-  <div class="topnav">
-    <a href="/users">Home</a>
-    <a class="nav-link btn-custom1" href="/register_item">Register Items</a>
-    <a class="nav-link btn-custom1" href="/room">Book Rooms</a>
-    <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-    </div>
+  <!-- ==================== Start Loading ==================== -->
+
+  <div class="loading">
+    <span>L</span>
+    <span>o</span>
+    <span>a</span>
+    <span>d</span>
+    <span>i</span>
+    <span>n</span>
+    <span>g</span>
   </div>
 
-  <div class="content">
-    <fieldset style="border-radius: 9px; background-color: #96DAA6;">
-      <legend>Item Information:</legend>
-      
-      <!--update database-->
-      <form  action="/register_item_db" method="post" enctype="multipart/form-data">
-        <div class="container">
-          <div class="row">
+  <div id="preloader">
+  </div>
+
+  <!-- ==================== End Loading ==================== -->
 
 
-            <!--Column1 add picc-->
-            <div class="col">
-              <div>
+  <!-- ==================== Start progress-scroll-button ==================== -->
+
+  <div class="progress-wrap cursor-pointer">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+
+  <!-- ==================== End progress-scroll-button ==================== -->
+
+
+  <!-- ==================== Start cursor ==================== -->
+
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+
+  <!-- ==================== End cursor ==================== -->
+
+
+  
+  <!-----------------------------รอเฉียงทำเสร็จแล้วเอามาใส่ในนี้---------------------------->
+
+
+  <!--------------------------register item part------------------------>
+  <div class="main-content">
+
+    <!-- ==================== Start Contact ==================== -->
+    <section class="contact section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 offset-lg-1">
+            <div class="cont-info">
+              <form action="/register_item_db" method="post">
+                <h4 class="fw-700 color-font mb-50">Import pictures items</h4>
+                <!--Column1 add picc-->
                 <div class="mb-4 d-flex justify-content-center">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                    alt="example placeholder" style="width: 300px;" />
+                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 300px;" />
                 </div>
                 <div class="d-flex justify-content-center">
+                  <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
-                        <label>Image</label>
-					              <input type="file" name="item_pic" id="item_pic" >
-                        <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
-                        <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
+                      <input type="file" name="item_pic" id="item_pic" >
                     </div>
-                </div>
-                <div style="height:20px;background-color:#96DAA6;"></div>
-              </div>
+                  </div>
+                </div>                  
             </div>
+          </div>
 
-            <!--Column2 Bid price--> 
-            <div class="col">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Begin price</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="begin_price" placeholder="Input Begin price">
-              </div>
-                <div style="height:20px;background-color:#96DAA6;"></div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Minimum bid price</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="min_bid" placeholder="Input minimum bid price">
-              </div>
-                <div style="height:20px;background-color:#96DAA6;"></div>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Minimum selling price</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="min_sell" placeholder="Input minimum selling price">
-              </div>
-                <div style="height:20px;background-color:#96DAA6;"></div>
-            </div>
-
-            <!--Column 3 Information--> 
-            <div class="col">
-              <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group mb-3">
-                  <label for="basic-url"></label>
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="item_name" placeholder="Input the item name">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Item description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="item_descrip" placeholder="Input Item Description"></textarea>
-                  </div>
+          <div class="col-lg-6">
+            <div class="form md-mb50">
+              <h4 class="fw-700 color-font mb-50">Item Information</h4>
+              <div class="messages"></div>
+              <div class="controls">
+                <div class="form-group">
+                  <input id="form_name" type="text" name="item_name" placeholder="Item Name" required="required">
                 </div>
-              </div>
-              </div>
-            </div>
-          
-            <!--Scar Part--> 
-            <div class="w-100"></div>
-            <legend>Scar description:</legend>
-            <div class="col">
-              <div>
-                <div class="mb-4 d-flex justify-content-center">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                  alt="example placeholder" style="width: 300px;" />
+                <div class="form-group">
+                  <textarea id="form_message" name="item_descrip" placeholder="Item Description" rows="4" required="required"></textarea>
                 </div>
-                <div class="d-flex justify-content-center">
-                  <div class="btn btn-primary btn-rounded">
-                    <label>Image</label>
-					          <input type="file" name="scar_pic" id="scar_pic" >
-                    <!-- <label class="form-label text-white m-1" for="customFile1">Add image</label>
-                    <input type="file" class="form-control d-none" id="customFile1" name="scar_pic" /> -->
-                  </div>
-                </div>
-                <div style="height:20px;background-color:#96DAA6;"></div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Scar description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Input Scar Description" name="scar_descrip"></textarea>
               </div>
             </div>
           </div>
+
+            <!-----------------------------------scar description------------------------------------->
+          <div class="row">
+            <div class="col-lg-5 offset-lg-1">
+              <div class="cont-info">
+                <h4 class="fw-700 color-font mb-50">Import Pictures Scar</h4>
+                <!--Column1 add picc-->
+                <div class="col">
+                  <div>
+                    <div class="mb-4 d-flex justify-content-center">
+                      <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 300px;" />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <div class="btn btn-primary btn-rounded">
+                        <input type="file" name="scar_pic" id="scar_pic" >
+                        <!-- <label class="form-label text-white m-1" for="customFile1">Add Image</label>
+                        <input type="file" class="form-control d-none" id="customFile1" name="item_pic" /> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>                 
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form md-mb50">
+                <h4 class="fw-700 color-font mb-50">Type of scar</h4>
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-group">
+                    <input id="form_name" type="text" name="name" placeholder="Your Scar" required="required">
+                  </div>
+                  <div class="form-group">
+                    <textarea id="form_message" name="scar_descrip" placeholder="Scar Description" rows="4" required="required"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-------------------------------price for bid------------------------------>
+          <div class="row">
+            <div class="col-lg-5 offset-lg-1">
+              <div class="form md-mb50">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form md-mb50">
+                <h4 class="fw-700 color-font mb-50">Price</h4>
+                <div class="messages"></div>
+                <div class="controls">
+                  <div class="form-group">
+                    <input id="form_name" type="number" name="begin_price" placeholder="Begin price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="form_name" type="number" name="min_bid" placeholder="Minimum bid price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="form_name" type="number" name="min_sell" placeholder="Maximum selling price" required="required">
+                  </div>                
+                </div>
+                <div class="controls">
+                  <button type="submit" class="butn bord"><span>Submit</span></button>
+                  <button type="" class="butn bord"><span>More Items</span></button>
+                </div>
+              </form>
+          </div>
         </div>
-      
-        </fieldset>
-        </div>
-
-        <div class="col border-end d-flex justify-content-center align-items-end">
-          <div class="column">
-          <!--<input class="btn btn-primary" type="submit" value="More">-->
-          <input class="btn btn-primary" type="submit" name="submit" value="submit" >
-          </div>  
-        </div>  
-      </form>  
-<script src="js/bootstrap.min.js"></script>   
+      </div>
+    </section>
+  </div>
 
 
+
+
+
+
+
+
+
+
+
+
+  <script src="vie-dark/js/bootstrap.min.js"></script>  
+  
+  
+  
+  <!-- jQuery -->
+  <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
+  <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+
+  <!-- plugins -->
+  <script src="vie-dark/js/plugins.js"></script>
+
+  <!-- custom scripts -->
+  <script src="vie-dark/js/scripts.js"></script>
+
+  <script>  
+    $(document).ready(function(){  
+          $('#insert').click(function(){  
+              var image_name = $('#image').val();  
+              if(image_name == '')  
+              {  
+                    alert("Please Select Image");  
+                    return false;  
+              }  
+              else  
+              {  
+                    var extension = $('#image').val().split('.').pop().toLowerCase();  
+                    if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                    {  
+                        alert('Invalid Image File');  
+                        $('#image').val('');  
+                        return false;  
+                    }  
+              }  
+          });  
+    });  
+    </script>
 
 </body>
 </html>
 
-<script>  
-$(document).ready(function(){  
-      $('#insert').click(function(){  
-          var image_name = $('#image').val();  
-          if(image_name == '')  
-          {  
-                alert("Please Select Image");  
-                return false;  
-          }  
-          else  
-          {  
-                var extension = $('#image').val().split('.').pop().toLowerCase();  
-                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
-                {  
-                    alert('Invalid Image File');  
-                    $('#image').val('');  
-                    return false;  
-                }  
-          }  
-      });  
-});  

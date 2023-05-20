@@ -14,24 +14,21 @@ mongoose.connect(dbUrl,{
 
 
 //Schema
-let roomSchema = mongoose.Schema({
-    //room_id:Number,
-    time_open:String,
-    time_close_door:String,
-    time_finish:String,
-    auction_day:Date,
-    user_id:String,
+let TranSchema = mongoose.Schema({
     item_id:String,
-    room_status:String
+    price:Number,
+    date:Date,
+    seller_id:String,
+    bidder_id:String,
 })
 
 //create model
-let Room = mongoose.model("room",roomSchema)
+let Trans = mongoose.model("transaction",TranSchema)
 
 //export model
-module.exports = Room
+module.exports = Trans
 
 //save document(data)
-module.exports.saveRoom=function(model,document){
+module.exports.saveTrans=function(model,document){
    model.save(document)
 }
