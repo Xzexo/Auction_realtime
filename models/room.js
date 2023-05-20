@@ -21,7 +21,8 @@ let roomSchema = mongoose.Schema({
     time_finish:String,
     auction_day:Date,
     user_id:String,
-    item_id:String
+    item_id:String,
+    status:String
 })
 
 //create model

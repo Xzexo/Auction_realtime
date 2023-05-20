@@ -23,7 +23,8 @@ let userSchema = mongoose.Schema({
     email:String,
     passwd:String,
     phone:Number,
-    user_type:String
+    user_type:String,
+    status:String
 });
 
 //create model
