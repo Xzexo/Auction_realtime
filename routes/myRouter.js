@@ -3,6 +3,8 @@ const express = require('express')
 const router = express.Router()
 const path = require('path')
 const cookieSession = require('cookie-session')
+const jwt = require('jsonwebtoken');
+
 const bcrypt = require('bcrypt')
 const { body, validationResult } = require('express-validator')
 
@@ -15,6 +17,10 @@ const Transfer = require('../models/transfer')
 
 //!upload file
 const multer = require('multer')
+
+// Load environment variables from a .env file
+require('dotenv').config();
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -51,32 +57,64 @@ router.get('/user_edit', (req, res) => {
 
 
 //! Login 
+
 router.post('/check', async (req, res) => {
-    const user_name = req.body.username
-    const pass_wd = req.body.passwd
-    const timeExpire = 1000000
-    //!Find username and password in DB
-    const user = User.findOne({
-        username: user_name,
-        passwd: pass_wd
-    })
-    if (user_name === "admin" && pass_wd === "123") {
-        req.session.username = user_name
-        req.session.password = pass_wd
-        req.session.login = true
-        req.session.cookie.maxAge = timeExpire
-        res.redirect('/admin')
-    } else if (user) {
-        Room.find().exec((err, doc) => {
-            res.render('users.ejs', { room: doc })
+    const user_name = req.body.username;
+    const pass_wd = req.body.passwd;
+
+    if (authenticationSuccess(user_name, pass_wd)) {
+
+        if (user_name === "admin" && pass_wd === "123") {
+            const user = {
+                name: user_name
+            }
+            const token = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '1h' })
+            res.cookie('token', token, { httpOnly: true })
+            res.redirect('/admin')
+
+        } else {
+            const userPayload = {
+                username: user_name,
+                password: pass_wd
+            }
+
+            const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+            res.cookie('token', token, { httpOnly: true });
+
+            Room.find().exec((err, doc) => {
+                res.render('users.ejs', { room: doc });
+            })
+        }
+    } else {
+        res.redirect('/login');
+    }
+});
+
+function authenticationSuccess(username, password) {
+    const user =  User.findOne({
+        username: username,
+        password: password
+    });
+    return user != null;
+}
+
+function authenticate(req, res, next) {
+    const token = req.cookies.token
+    if (!token) {
+        res.redirect('/login')
+    } else {
+        jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+            if (err) {
+                res.redirect('/login')
+            } else {
+                req.user = user
+                next()
+            }
         })
     }
-    else {
-        res.redirect('/login')
+}
 
-    }
 
-})
 
 router.get('/login', (req, res) => {
     res.render('login.ejs')
@@ -88,11 +126,17 @@ router.get('/register', (req, res) => {
 
 
 //! Admin
-router.get('/admin', (req, res) => {
+router.get('/admin', authenticate, (req, res) => {
+    console.log(authenticate);
+
     Room.find().exec((err, doc) => {
+    console.log("doc : ",doc);
+        
         res.render('admin.ejs', { room: doc })
     })
 })
+
+
 router.get('/admin_add', (req, res) => {
     res.render('admin_add_room.ejs')
 })
@@ -384,25 +428,25 @@ router.get('/transactions/buyer/:buyer_id', async (req, res) => {
 //create transaction
 router.post('/transactions', async (req, res) => {
     try {
-      const { item_id, seller_id, buyer_id, price, paid_date } = req.body;
-  
-      const newTransaction = new Transaction({
-        item_id,
-        seller_id,
-        buyer_id,
-        price,
-        paid_date
-      });
-  
-      const savedTransaction = await newTransaction.save();
-  
-      res.status(201).json(savedTransaction);
+        const { item_id, seller_id, buyer_id, price, paid_date } = req.body;
+
+        const newTransaction = new Transaction({
+            item_id,
+            seller_id,
+            buyer_id,
+            price,
+            paid_date
+        });
+
+        const savedTransaction = await newTransaction.save();
+
+        res.status(201).json(savedTransaction);
     } catch (error) {
-      console.error('Failed to create transaction', error);
-      res.status(500).json({ error: 'Failed to create transaction' });
+        console.error('Failed to create transaction', error);
+        res.status(500).json({ error: 'Failed to create transaction' });
     }
-  });
-  
+});
+
 
 
 // Room //
