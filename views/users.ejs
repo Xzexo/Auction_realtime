@@ -85,7 +85,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/user_edit">TORO</a>
+                        <a class="nav-link" href="/users/<%= user._id%>"><%= user._id%></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user_edit/<%= user._id%>"><%=user.username%></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/history">History</a>
@@ -114,7 +117,7 @@
                                 <div class="col-lg-8 col-md-10">
                                     <div class="caption center mt-30">
                                         <h1>Auction <span class="color-font">in real time</span> <br> <span
-                                                class="color-font">via</span> website   </h1>
+                                                class="color-font">via</span> website  </h1>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +246,7 @@
                         <div class="item-box md-mb50">
                             <h6>Register Item</h6>
                             <p>Register your product for sell in auction</p>
-                            <a href="/register_item" class="butn bord curve mt-30">
+                            <a href="/register_item/<%= user._id%>" class="butn bord curve mt-30">
                               <span>Register</span>
                           </a>
                         </div>
@@ -295,7 +298,7 @@
                           </a>
                       </div>
                       <div class="cont">
-                          <h5 href="/auction>">Ancient Table from Egypt</h5>
+                          <h5 href="/auction>"><%= room._id%></h5>
                           <span class="tags main-color custom-font">
                             <a>Time open: <%= room.time_open%></a></br>
                             <a>Time close: <%= room.time_close_door%></a></br>
@@ -311,7 +314,6 @@
           </div>
       </div>
   </section>
-
   <!-- ==================== End works ==================== -->
 
 
