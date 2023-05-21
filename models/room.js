@@ -22,7 +22,7 @@ let roomSchema = mongoose.Schema({
     auction_day:Date,
     user_id:String,
     item_id:String,
-    room_status:String
+    status:String
 })
 
 //create model

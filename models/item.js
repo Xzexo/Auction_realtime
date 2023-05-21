@@ -25,7 +25,7 @@ let itemSchema = mongoose.Schema({
     item_defect_pic:String,
     user_id:String,
     room_id:String,
-    item_status:String
+    status:String
 })
 
 //create model
@@ -38,6 +38,3 @@ module.exports = Item
 module.exports.saveItem=function(model,document){
    model.save(document)
 }
-
-
- 
