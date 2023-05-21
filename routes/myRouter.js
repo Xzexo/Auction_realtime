@@ -64,7 +64,7 @@ router.post('/check', async (req, res) => {
 
     if (authenticationSuccess(user_name, pass_wd)) {
 
-        if (user_name === "admin" && pass_wd === "123") {
+        if (user_name == process.env.USERNAME && pass_wd == process.env.PASS) {
             const user = {
                 name: user_name
             }
