@@ -62,41 +62,59 @@ router.post('/check', async (req, res) => {
     const user_name = req.body.username;
     const pass_wd = req.body.passwd;
 
-    if (authenticationSuccess(user_name, pass_wd)) {
+    //Find username and password in DB
 
-        if (user_name == process.env.USERNAME && pass_wd == process.env.PASS) {
-            const user = {
-                name: user_name
-            }
-            const token = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '1h' })
-            res.cookie('token', token, { httpOnly: true })
-            res.redirect('/admin')
+    const user = await findUser(user_name, pass_wd);
 
-        } else {
-            const userPayload = {
-                username: user_name,
-                password: pass_wd
-            }
 
-            const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
-            res.cookie('token', token, { httpOnly: true });
-
-            Room.find().exec((err, doc) => {
-                res.render('users.ejs', { room: doc });
-            })
+    if (user_name == process.env.USERNAME && pass_wd == process.env.PASS) {
+        const userPayload = {
+            name: user_name
         }
-    } else {
+        const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        res.cookie('token', token, { httpOnly: true })
+        res.redirect('/admin')
+
+    } else if (user) {
+        const userPayload = {
+            username: user_name,
+            password: pass_wd
+        }
+
+        const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.cookie('token', token, { httpOnly: true });
+
+        console.log("user :", user);
+        Room.find().exec((err, doc) => {
+            res.render('users.ejs', { room: doc, user: user }); //add user object
+        })
+
+    }
+    else {
         res.redirect('/login');
+
     }
 });
 
-function authenticationSuccess(username, password) {
-    const user =  User.findOne({
-        username: username,
-        password: password
-    });
-    return user != null;
+async function findUser(username, passwd) {
+    try {
+        // Find user in the database
+        let user = await User.findOne({ username: username, passwd: passwd });
+
+        if (user) {
+            // If user is found, return user data
+            return user;
+        } else {
+            // If no user is found, return an error message
+            throw new Error("User not found.");
+        }
+    } catch (error) {
+        // If there's an error, throw the error
+        throw error;
+    }
 }
+
 
 function authenticate(req, res, next) {
     const token = req.cookies.token
@@ -134,8 +152,8 @@ router.get('/admin', authenticate, (req, res) => {
         } else {
             // console.log("doc : ",doc);
             console.log("userInfo : ", req.user); // assuming that authenticate middleware adds user info to req.user
-            
-            res.render('admin.ejs', { room: doc, userInfo : req.user })
+
+            res.render('admin.ejs', { room: doc, userInfo: req.user })
         }
     })
 })
@@ -511,6 +529,32 @@ router.get('/users/:id', (req, res) => {
 });
 
 
+// find user by username and password
+router.post('/findUser', async (req, res) => {
+    const { username, passwd } = req.body;
+
+    console.log("AAAAAAAAAA");
+    try {
+        // Find user in the database
+        let user = await User.findOne({ username: username, passwd: passwd });
+
+        if (user) {
+            // If user is found, return user data
+            res.status(200).json(user);
+            console.log("This User : ", user);
+
+
+        } else {
+            // If no user is found, return an error message
+            res.status(404).json({ message: "User not found." });
+        }
+    } catch (error) {
+        // If there's an error, return an error message
+        res.status(500).json({ message: "Error occurred.", error: error.message });
+    }
+
+});
+
 
 module.exports = router
 
@@ -518,5 +562,6 @@ router.get("/:id", (req, res) => {
     const room_id = req.params.id
     Room.findOne({ _id: room_id }).exec((err, doc) => {
         res.render('book_room.ejs', { room: doc })
+
     })
 })
