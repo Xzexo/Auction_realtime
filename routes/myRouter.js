@@ -127,12 +127,16 @@ router.get('/register', (req, res) => {
 
 //! Admin
 router.get('/admin', authenticate, (req, res) => {
-    console.log(authenticate);
-
     Room.find().exec((err, doc) => {
-    console.log("doc : ",doc);
-        
-        res.render('admin.ejs', { room: doc })
+        if (err) {
+            console.error(err);
+            res.status(500).send(err);
+        } else {
+            // console.log("doc : ",doc);
+            console.log("userInfo : ", req.user); // assuming that authenticate middleware adds user info to req.user
+            
+            res.render('admin.ejs', { room: doc, userInfo : req.user })
+        }
     })
 })
 
