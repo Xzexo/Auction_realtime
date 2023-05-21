@@ -131,12 +131,7 @@ router.get('/payment',(req,res)=>{
     res.render('payment.ejs')
 })
 
-//router.get("/:id",(req,res)=>{
-//    const room_id = req.params.id
-//   Room.findOne({_id:room_id}).exec((err,doc)=>{
-//        res.render('book_room.ejs',{room:doc})
-//    })
-//})
+
 
 
 
@@ -209,3 +204,10 @@ router.post('/edit_room',(req,res)=>{
 })
 
 module.exports = router
+
+router.get("/:id",(req,res)=>{
+    const room_id = req.params.id
+    Room.findOne({_id:room_id}).exec((err,doc)=>{
+        res.render('book_room.ejs',{room:doc})
+    })
+})
