@@ -35,3 +35,14 @@
         </div>
     </div>
 </div>
+
+
+
+Room.find().exec((err, doc_room) => {
+    User.findOne({username: user_name, passwd: pass_wd}).exec((err, doc)=> {
+        const user_id = doc._id;
+        User.findById(user_id).exec((err,doc_user) =>{
+            res.render('users.ejs', { room: doc_room, user:doc_user })
+        })
+    })
+})
