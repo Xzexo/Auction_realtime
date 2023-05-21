@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction room</title>
 
-<head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+        .scroll-box{
+          width: 300px;
+          height: 650px;
+          overflow: auto;
+          color: #333333
+        }
+        .scroll-box2{
+          width: 400px;
+          height: 50px;
+          overflow: auto;
+          color: #333333
 
-    <!-- Metas -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="HTML5 Template Vie onepage themeforest" />
-    <meta name="description" content="Vie - Onepage Multi-Purpose HTML5 Template" />
-    <meta name="author" content="" />
-
-    <!-- Title  -->
-    <title>Bidlersegde</title>
-
+        }
+        .black{
+            color:#333333
+        }
+        .custom-button {
+        background-color: #070707; /* Set the background color of the button */
+        color: #ffffff; /* Set the text color of the button */
+        border: none; /* Remove the border around the button */
+        padding: 10px 20px; /* Set padding to create some spacing */
+        cursor: pointer; /* Change the cursor to a pointer on hover */
+      }
+      .white{
+        color:#ffffff
+      }
+      </style>
     <!-- Favicon -->
     <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
 
@@ -31,11 +54,10 @@
     <!-- Core Style Css -->
     <link rel="stylesheet" href="vie-dark/css/style.css" />
 
-</head>
+    
 
-<body class="position-r">
-
-
+  </head>
+  <body class="position-r">
 
     <!-- ==================== Start Loading ==================== -->
 
@@ -63,107 +85,85 @@
 
     <!-- ==================== End cursor ==================== -->
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ">
 
-
- <!-- ==================== Start About ==================== -->
-
- <section class="about-ar section-padding ">
-	<div class="container">
-		<div class="row">
-            <div class="col-lg-7 ">
                 <div class="text-center">
-                    <h6 class="ls3 text-u">Ancient Egypt Table</h6>
+                    <h6 class="ls3 text-u">Item name</h6>
                 </div>
                 <div class="exp text-center">
                     <div class="full-width">
-                        <img src="vie-dark/img/live-stream.png">
+                        <div>
+                            <iframe src="http://localhost:3000/" width="750" height="600" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col-3 valign">
+                        <p class="white">Current Price: 
+                            <span class="white"id="currentPrice">$100</span>
+                        </p>
+                    </div>
+                    <div class="col-3 valign">
+                        <ul class="list-group list-group-flush scroll-box2 white"  id="bidHistory">
+                        <!-- Bid history will be dynamically updated here -->
+                        </ul>
+                    </div>
                     <div class="row">
-                        <div class="col-3 valign">
-                            <div class="form-group">
-                                <div class="text-center">
-                                    <a href="#" class="butn light mt-30 full-width">
-                                        <h6 class="ls3 text-u text-center">Bid</h6>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-5 valign">
-                            <div class="text-center">
-                                <a href="#" class="butn light mt-30 full-width">
-                                    <h6 class="ls3 text-u">Bid minimum</h6>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-3 valign">
-                            <div class="text-center">
-                                <a href="/payment" class="butn light mt-30 full-width">
-                                    <h6 class="ls3 text-u">ฺBuy maximum</h6>
-                                </a>
-                            </div>
+                        <div class="col-2 valign">          
+                            <input type="text" id="username" placeholder="Enter your username">        
+                            <input type="number" id="bidAmount" placeholder="Enter your bid amount">
+                            <button class="btn custom-button" button onclick="placeBid()">Place Bid</button>
                         </div>
                     </div>
+                    <div class="col-1 valign">
+                        <div class="text-center">
+                            <button class="btn custom-button" button onclick="bidMin()">MinB</button>
+                        </div>
+                    </div>
+                    <p id="winnerText"></p>
+                </div>
 
             </div>
 
-			<div class="col-lg-5 valign">
+            <div class="col-lg-4 valign">
 
-				<section class="contact-sec style2 section-padding position-re bg-img" >
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-lg-6 col-md-6">
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col-lg-10">
+                <div class="card">
+                
+                    <div class="message-box">
+                        <ul class="list-group list-group-flush scroll-box "   id="message-list"></ul>
+                        <div class="info black "></div>
+                    </div>
 
-								<div class="form wow fadeInUp">
-                                        <div class="controls">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <h6>chat</h6>
-                                                    <input  type="hidden" name="reserve_id" value=""
-                                                    >
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-												<div class="col-lg-12 ">
-													<div class="form-group">
-                                                        <input id="des" type="text" name="des" placeholder="send message">
-                                                        <div class="input-group-append">
-                                                            <button href="#" class="butn light mt-30 full-width">
-                                                                <h6 class="ls text-center">send</h6>
-                                                            </button>
-                                                        </div>
-													</div>
-												</div>
-											</div> 
-										</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- ==================== End About ==================== -->
-
-
-
-
-
-
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <input
+                            type="text"
+                            class="form-control"
+                            id="message"
+                            placeholder="Send new message"
+                            />
+                            <div class="input-group-append">
+                                <button class="btn custom-button" type="button" id="messageBtn">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
 
+    <!-- chat -->
+    <script src="js/chatroom.js"></script>
+
+    <script src="js/live.mjs" type="module"></script>
+    <script src="js/Hello.js"></script>
 
     <!-- jQuery -->
     <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
@@ -175,6 +175,69 @@
     <!-- custom scripts -->
     <script src="vie-dark/js/scripts.js"></script>
 
-</body>
 
+    <script>
+        // Bidding system logic
+        let currentPrice = 100;
+        const bidHistory = [];
+        let winnerUsername = '';
+
+      function placeBid() {
+      const usernameInput = document.getElementById('username');
+      const bidAmountInput = document.getElementById('bidAmount');
+
+      const username = usernameInput.value.trim();
+      const bidAmount = parseInt(bidAmountInput.value);
+
+      if (bidAmount > currentPrice) {
+        currentPrice = bidAmount;
+        bidHistory.push({ username, bidAmount });
+
+        updateCurrentPrice();
+        updateBidHistory();
+
+        usernameInput.value = ''; // Clear input fields
+        bidAmountInput.value = '';
+
+        if (bidAmount > currentPrice) {
+          winnerUsername = username;
+          updateWinnerText();
+        }
+      } else {
+        alert('Your bid must be higher than the current price.');
+      }
+    }
+    
+    function updateCurrentPrice() {
+      const currentPriceElement = document.getElementById('currentPrice');
+      currentPriceElement.textContent = `$${currentPrice}`;
+    }
+    
+    function updateBidHistory() {
+      const bidHistoryElement = document.getElementById('bidHistory');
+      bidHistoryElement.innerHTML = '';
+
+      bidHistory.forEach((bid) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Bid: $${bid.bidAmount} by ${bid.username}`;
+        bidHistoryElement.appendChild(listItem);
+      });
+    }
+
+    function bidMin() {
+      if (bidHistory.length > 0) {
+        const previousBid = bidHistory[bidHistory.length - 1];
+        const bidAmountInput = document.getElementById('bidAmount');
+        bidAmountInput.value = previousBid.bidAmount + 10;
+      } else {
+        alert('There is no previous bid history.');
+      }
+    }
+
+    function updateWinnerText() {
+      const winnerText = document.getElementById('winnerText');
+      winnerText.textContent = `Winner: ${winnerUsername}`;
+    }
+      </script>
+</body>
 </html>

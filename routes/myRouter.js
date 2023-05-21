@@ -10,6 +10,7 @@ const {body, validationResult} = require('express-validator')
 const User = require('../models/user')
 const Item = require('../models/item')
 const Room = require('../models/room')
+const Trans = require('../models/transaction')
 
 //!upload file
 const multer = require('multer')
@@ -116,6 +117,10 @@ router.get("/room",(req,res)=>{
     Room.find().exec((err,doc)=>{
         res.render('room.ejs',{room:doc})
     })
+})
+
+router.get('/testchat',(req,res)=>{
+    res.render('Testchat.ejs')
 })
 
 router.get('/auction',(req,res)=>{
