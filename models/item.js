@@ -24,7 +24,8 @@ let itemSchema = mongoose.Schema({
     item_defect:String,
     item_defect_pic:String,
     user_id:String,
-    room_id:String
+    room_id:String,
+    item_status:String
 })
 
 //create model
