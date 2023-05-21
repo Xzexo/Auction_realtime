@@ -63,7 +63,7 @@
 <title>BidslerEdge</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="vie-dark/img/favicon.ico" />
+<link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -98,9 +98,7 @@
     ></script>
     <meta charset="utf-8" />
     <title>JS Bin</title>
-    <!--[if IE]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
     <style>
       article,
       aside,
@@ -154,7 +152,6 @@
   <!-- ==================== End cursor ==================== -->
 
 
-
   
   <!-----------------------------รอเฉียงทำเสร็จแล้วเอามาใส่ในนี้---------------------------->
 
@@ -164,21 +161,21 @@
 
     <!-- ==================== Start Contact ==================== -->
     <section class="contact section-padding">
-
       <div class="container">
         <div class="row">
           <div class="col-lg-5 offset-lg-1">
             <div class="cont-info">
               <form action="/register_item_db" method="post">
                 <h4 class="fw-700 color-font mb-50">Import pictures items</h4>
-
+    
+                <!-- Column1 add pic -->
                 <div class="mb-4 d-flex justify-content-center">
                   <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" alt="example placeholder" style="width: 300px;" />
                 </div>
                 <div class="d-flex justify-content-center">
                   <div class="d-flex justify-content-center">
                     <div class="btn btn-primary btn-rounded">
-
+                      <input type="file" name="item_pic" id="item_pic">
                     </div>
                   </div>
                 </div>
@@ -197,16 +194,15 @@
                     <textarea id="item_description" name="item_description" placeholder="Item Description" rows="4" required="required"></textarea>
                   </div>
                 </div>
-
+              </div>
             </div>
           </div>
-
-
+    
           <div class="row">
             <div class="col-lg-5 offset-lg-1">
               <div class="cont-info">
                 <h4 class="fw-700 color-font mb-50">Import Pictures Scar</h4>
-
+                <!-- Column1 add pic -->
                 <div class="col">
                   <div>
                     <div class="mb-4 d-flex justify-content-center">
@@ -214,7 +210,9 @@
                     </div>
                     <div class="d-flex justify-content-center">
                       <div class="btn btn-primary btn-rounded">
-
+                        <input type="file" name="scar_pic" id="scar_pic">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -234,61 +232,32 @@
               </div>
             </div>
           </div>
-
-          <!-------------------------------price for bid------------------------------>
-          <div class="row">
-            <div class="col-lg-5 offset-lg-1">
-              <div class="form md-mb50">
-
     
           <div class="row">
             <div class="col-lg-5 offset-lg-1">
               <div class="form md-mb50">
-
               </div>
             </div>
             <div class="col-lg-6">
               <div class="form md-mb50">
-
                 <h4 class="fw-700 color-font mb-50">Price</h4>
                 <div class="messages"></div>
                 <div class="controls">
                   <div class="form-group">
-
+                    <input id="begin_price" type="number" name="begin_price" placeholder="Begin price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="min_bid" type="number" name="min_bid" placeholder="Minimum bid price" required="required">
+                  </div>
+                  <div class="form-group">
+                    <input id="min_sell" type="number" name="min_sell" placeholder="Maximum selling price" required="required">
+                  </div>
                 </div>
                 <div class="controls">
                   <button type="submit" class="butn bord"><span>Submit</span></button>
                   <button type="" class="butn bord"><span>More Items</span></button>
                 </div>
               </form>
-
-
-                  <h4 class="fw-700 color-font mb-50">Price</h4>
-                  <form id="contact-form" method="post" action="contact.php">
-
-                      <div class="messages"></div>
-
-                      <div class="controls">
-
-                          <div class="form-group">
-                              <input id="form_name" type="number" name="name" placeholder="Begin price"
-                                  required="required">
-                          </div>
-                          <div class="form-group">
-                            <input id="form_name" type="number" name="name" placeholder="Minimum bid price"
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                          <input id="form_name" type="number" name="name" placeholder="Maximum selling price"
-                              required="required">
-                        </div>                
-                      </div>
-                      <div class="controls">
-                        <button type="submit" class="butn bord"><span>Submit</span></button>
-                        <button type="submit" class="butn bord"><span>More Items</span></button>
-                      </div>
-                  </form>
-              </div>
             </div>
           </div>
         </div>
@@ -344,52 +313,5 @@
     });  
     </script>
 
-
-
-
-
-
-
-
-
-
-  <script src="vie-dark/js/bootstrap.min.js"></script>  
-  
-  
-  
-  <!-- jQuery -->
-  <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
-  <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
-
-  <!-- plugins -->
-  <script src="vie-dark/js/plugins.js"></script>
-
-  <!-- custom scripts -->
-  <script src="vie-dark/js/scripts.js"></script>
-
-  <script>  
-    $(document).ready(function(){  
-          $('#insert').click(function(){  
-              var image_name = $('#image').val();  
-              if(image_name == '')  
-              {  
-                    alert("Please Select Image");  
-                    return false;  
-              }  
-              else  
-              {  
-                    var extension = $('#image').val().split('.').pop().toLowerCase();  
-                    if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
-                    {  
-                        alert('Invalid Image File');  
-                        $('#image').val('');  
-                        return false;  
-                    }  
-              }  
-          });  
-    });  
-    </script>
-
 </body>
 </html>
-
