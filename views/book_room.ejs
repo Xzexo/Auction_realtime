@@ -15,7 +15,7 @@
     <title>Bidlersegde</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
+    <link rel="shortcut icon" href="http://localhost:3030/vie-dark/img/auc_icon.png" />
 
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -26,10 +26,10 @@
 
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="vie-dark/css/style.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/style.css" />
 
 </head>
 
@@ -65,40 +65,7 @@
 
 
 
-    <!-- ==================== Start Navbar ==================== -->
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-
-            <!-- Logo -->
-            <a class="logo" href="/user">
-                <img src="vie-dark/img/user.png" alt="Profile">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-bar"><i class="fas fa-bars"></i></span>
-            </button>
-
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/user_edit">TORO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/history">History</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="/" class="btn btn-custom" >Sign out</a></li>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <!-- ==================== End Navbar ==================== -->
 
 
     <div class="main-content">
@@ -140,8 +107,8 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <h6>Room</h6>
-                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>"
-                                                    >
+                                                    <input  type="hidden" name="reserve_id" value="<%=room._id%>">
+                                                    <input  id="user_id" type="hidden" name="user_id" value="<%=user._id%>"">
                                                 </div>
                                             </div>
 
@@ -187,16 +154,19 @@
                                             </div>
 
                                             <div class="row">
-												<div class="col-lg-6">
-													<div class="form-group">
-														<h6>Description</h6>
-														<input id="des" type="textarea" name="des" placeholder="Description"
-														>
-													</div>
-												</div>
+												
                                                 <div class="col-lg-6">
+													<div class="form-group">
+														<h6>Advertising words</h6>
+														<input  type="text" name="item_ad" id="item_ad" placeholder="Type Advertising Words">
+													</div>
 													<div class="text-center">
-														<input type="button" name="upload" id="upload" class="butn light mt-30 full-width" value = "Upload your item" >
+                                                         <select name="item_id" id="item_id" class="butn white mt-30 full-width">
+                                                            <option value="">-- Select an item --</option>
+                                                            <% Object.values(item).forEach(function(item){%>
+                                                            <option value ="<%= item._id%>" name="item_id"><%= item.item_name%></option>
+                                                            <% }) %>
+                                                          </select>
 													</div>
 												</div>
 												<div class="col-lg-12">
@@ -231,14 +201,14 @@
 
 
     <!-- jQuery -->
-    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
-    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
 
     <!-- plugins -->
-    <script src="vie-dark/js/plugins.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/plugins.js"></script>
 
     <!-- custom scripts -->
-    <script src="vie-dark/js/scripts.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/scripts.js"></script>
 
 </body>
 

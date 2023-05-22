@@ -12,7 +12,7 @@
     <style>
         .scroll-box{
           width: 300px;
-          height: 650px;
+          height: 550px;
           overflow: auto;
           color: #333333
         }
@@ -38,7 +38,7 @@
       }
       </style>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
+    <link rel="shortcut icon" href="http://localhost:3030/vie-dark/img/auc_icon.png" />
 
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -49,10 +49,10 @@
 
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="vie-dark/css/style.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/style.css" />
 
     
 
@@ -87,71 +87,88 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 ">
-
-                <div class="text-center">
-                    <h6 class="ls3 text-u">Item name</h6>
+            <div class="col-lg-4 ">
+              <div class="card-header" ><%= user.username%></div>
+              <div class="card">
+                <div class="card-body">
                 </div>
-                <div class="exp text-center">
-                    <div class="full-width">
-                        <div>
-                            <iframe src="http://localhost:3000/" width="750" height="600" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
+        
+                <div class="message-box">
+                  <ul class="list-group list-group-flush scroll-box" id="message-list"></ul>
+                  <div class="info black"></div>
                 </div>
-                <div class="row">
-                    <div class="col-3 valign">
-                        <p class="white">Current Price: 
-                            <span class="white"id="currentPrice">$100</span>
-                        </p>
+        
+                <div class="card-footer">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="message"
+                      placeholder="Send new message"
+                    />
+                    <div class="input-group-append">
+                      <button class="btn custom-button" type="button" id="messageBtn">
+                        Send
+                      </button>
                     </div>
-                    <div class="col-3 valign">
-                        <ul class="list-group list-group-flush scroll-box2 white"  id="bidHistory">
-                        <!-- Bid history will be dynamically updated here -->
-                        </ul>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        value="<%= user.username%>"
+                        type="hidden"
+                        readonly
+                      />
+                      <div class="input-group-append">
+                        <button class="btn custom-button" type="button" id="usernameBtn">
+                          Let's chat
+                        </button>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 valign">          
-                            <input type="text" id="username" placeholder="Enter your username">        
-                            <input type="number" id="bidAmount" placeholder="Enter your bid amount">
-                            <button class="btn custom-button" button onclick="placeBid()">Place Bid</button>
-                        </div>
-                    </div>
-                    <div class="col-1 valign">
-                        <div class="text-center">
-                            <button class="btn custom-button" button onclick="bidMin()">MinB</button>
-                        </div>
-                    </div>
-                    <p id="winnerText"></p>
+                  </div>
                 </div>
+              </div>
 
             </div>
 
-            <div class="col-lg-4 valign">
-
-                <div class="card">
-                
-                    <div class="message-box">
-                        <ul class="list-group list-group-flush scroll-box "   id="message-list"></ul>
-                        <div class="info black "></div>
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="input-group">
-                            <input
-                            type="text"
-                            class="form-control"
-                            id="message"
-                            placeholder="Send new message"
-                            />
-                            <div class="input-group-append">
-                                <button class="btn custom-button" type="button" id="messageBtn">
-                                    Send
-                                </button>
-                            </div>
-                        </div>
+            <div class="col-lg-8 ">
+              <div class="text-center">
+                <h6 class="ls3 text-u"><%= item.item_name%></h6>
+            </div>
+            <div class="exp text-center">
+                <div class="full-width">
+                    <div>
+                        <iframe src="http://localhost:3000/" width="750" height="600" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-3 valign">
+                    <p class="white">Current Price: 
+                        <span class="white"id="currentPrice">$100</span>
+                    </p>
+                </div>
+                <div class="col-3 valign">
+                    <ul class="list-group list-group-flush scroll-box2 white"  id="bidHistory">
+                    <!-- Bid history will be dynamically updated here -->
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-2 valign">          
+                        <input type="" id="username" value="<%= user.username%>" readonly>        
+                        <input type="number" id="bidAmount" placeholder="Enter your bid amount">
+                        <button class="btn custom-button"  onclick="placeBid()">Place Bid</button>
+                    </div>
+                </div>
+                <div class="col-1 valign">
+                    <div class="text-center">
+                        <button class="btn custom-button"  onclick="bidMin()">MinB</button>
+                    </div>
+                </div>
+                <p id="winnerText"></p>
+            </div>
+              
             </div>
         </div>
     </div>
@@ -160,20 +177,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
 
     <!-- chat -->
-    <script src="js/chatroom.js"></script>
+    <script src="http://localhost:3030/js/chatroom.js"></script>
 
-    <script src="js/live.mjs" type="module"></script>
-    <script src="js/Hello.js"></script>
+    <script src="http://localhost:3030/js/live.mjs" type="module"></script>
+    <script src="http://localhost:3030/js/Hello.js"></script>
 
     <!-- jQuery -->
-    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
-    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
 
     <!-- plugins -->
-    <script src="vie-dark/js/plugins.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/plugins.js"></script>
 
     <!-- custom scripts -->
-    <script src="vie-dark/js/scripts.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/scripts.js"></script>
 
 
     <script>
@@ -181,7 +198,8 @@
         let currentPrice = 100;
         const bidHistory = [];
         let winnerUsername = '';
-
+        const bm = "<%= item.item_minimum_bid%>"
+        const min = parseInt(bm);
       function placeBid() {
       const usernameInput = document.getElementById('username');
       const bidAmountInput = document.getElementById('bidAmount');
@@ -196,7 +214,6 @@
         updateCurrentPrice();
         updateBidHistory();
 
-        usernameInput.value = ''; // Clear input fields
         bidAmountInput.value = '';
 
         if (bidAmount > currentPrice) {
@@ -228,7 +245,7 @@
       if (bidHistory.length > 0) {
         const previousBid = bidHistory[bidHistory.length - 1];
         const bidAmountInput = document.getElementById('bidAmount');
-        bidAmountInput.value = previousBid.bidAmount + 10;
+        bidAmountInput.value = previousBid.bidAmount + min;
       } else {
         alert('There is no previous bid history.');
       }

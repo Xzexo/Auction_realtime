@@ -15,7 +15,7 @@
     <title>Bidlersegde</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
+    <link rel="shortcut icon" href="http://localhost:3030/vie-dark/img/auc_icon.png" />
 
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -26,11 +26,17 @@
 
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="vie-dark/css/style.css" />
-
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/style.css" />
+    <style>
+        .n{
+            align-items: center;
+            font-size: large;
+            color: aquamarine;
+        }
+    </style>
 
 </head>
 
@@ -73,7 +79,7 @@
 
             <!-- Logo -->
             <a class="logo" href="/user">
-                <img src="vie-dark/img/user.png" alt="Profile">
+                <img src="http://localhost:3030/vie-dark/img/user.png" alt="Profile">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -85,10 +91,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/<%= user._id%>"><%= user._id%></a>
+                        <a class="nav-link" href="/users"><%= user._id%></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/user_edit/<%= user._id%>"><%=user.username%></a>
+                        <a class="nav-link" href="/user_edit/<%= user._id%>"><%= user.username%></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/history">History</a>
@@ -111,7 +117,7 @@
         <div class="swiper-container parallax-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="bg-img valign" data-background="vie-dark/img/pic_slide1.jpg" data-overlay-dark="6">
+                    <div class="bg-img valign" data-background="http://localhost:3030/vie-dark/img/pic_slide1.jpg" data-overlay-dark="6">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-8 col-md-10">
@@ -125,7 +131,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="bg-img valign" data-background="vie-dark/img/pic_slide2.png" data-overlay-dark="6">
+                    <div class="bg-img valign" data-background="http://localhost:3030/vie-dark/img/pic_slide2.png" data-overlay-dark="6">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 col-md-9">
@@ -139,7 +145,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="bg-img valign" data-background="vie-dark/img/pic_slide3.jpg" data-overlay-dark="6">
+                    <div class="bg-img valign" data-background="http://localhost:3030/vie-dark/img/pic_slide3.jpg" data-overlay-dark="6">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 col-md-9">
@@ -190,15 +196,15 @@
                             <div class="row">
                                 <div class="col-md-5 cmd-padding valign">
                                     <div class="img1 wow imago" data-wow-delay=".5s">
-                                        <img src="vie-dark/img/Programmer1.png" alt="">
+                                        <img src="http://localhost:3030/vie-dark/img/Programmer1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-7 cmd-padding">
                                     <div class="img2 wow imago" data-wow-delay=".3s">
-                                        <img src="vie-dark/img/Programmer2.jpeg" alt="">
+                                        <img src="http://localhost:3030/vie-dark/img/Programmer2.jpeg" alt="">
                                     </div>
                                     <div class="img3 wow imago" data-wow-delay=".8s">
-                                        <img src="vie-dark/img/Programmer3.jpeg" alt="">
+                                        <img src="http://localhost:3030/vie-dark/img/Programmer3.jpeg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +252,7 @@
                         <div class="item-box md-mb50">
                             <h6>Register Item</h6>
                             <p>Register your product for sell in auction</p>
-                            <a href="/register_item/<%= user._id%>" class="butn bord curve mt-30">
+                            <a href="/register_item/<%=user._id%>" class="butn bord curve mt-30">
                               <span>Register</span>
                           </a>
                         </div>
@@ -255,7 +261,7 @@
                         <div class="item-box">
                             <h6>Reserve room</h6>
                             <p>Reserve room to open your auction room</p>
-                            <a href="/room" class="butn bord curve mt-30">
+                            <a href="/room/<%=user._id%>" class="butn bord curve mt-30">
                               <span>Reserve</span>
                           </a>
                         </div>
@@ -290,24 +296,22 @@
                   <!-- gallery item -->
                   <!-- Room -->
                 <% Object.values(room).forEach(function(room){%>
-                  <div class="col-md-6 items graphic lg-mr wow fadeInUp" data-wow-delay=".4s">
-                      <div class="item-img">
-                          <a href="/auction" class="imago wow">
-                              <img src="vie-dark/img/egypt.jpg" alt="image">
-                              <div class="item-img-overlay"></div>
-                          </a>
-                      </div>
-                      <div class="cont">
-                          <h5 href="/auction>"><%= room._id%></h5>
-                          <span class="tags main-color custom-font">
-                            <a>Time open: <%= room.time_open%></a></br>
-                            <a>Time close: <%= room.time_close_door%></a></br>
-                            <a>Time finish: <%= room.time_finish%></a></br>
-                            <a>Date: <%= room.auction_day%></a>
-                          </span>
-                      </div>
-                  </div>
-                  <% }) %>
+                    <div class="col-md-6 items  lg-mr wow fadeInUp" data-wow-delay=".4s">
+                        <div class="cont">
+                            <span class="tags main-color custom-font">
+                              <div class="n">Advertising: <%= room.item_ad%></div>
+                              <br>
+                              <a>Time open: <%= room.time_open%></a>
+                              <br>
+                              <a>Time close: <%= room.time_close_door%></a>
+                              <br>
+                              <a>Time finish: <%= room.time_finish%></a></br>
+                              <a>Date: <%= room.auction_day%></a>
+                              <a class="butn light mt-30 full-width" href="/item/<%= user._id%>/<%= room._id%>" > Check </a>
+                            </span>
+                        </div>
+                    </div>
+                    <% }) %>
                   
               </div>
 
@@ -328,14 +332,14 @@
 
 
     <!-- jQuery -->
-    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
-    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
 
     <!-- plugins -->
-    <script src="vie-dark/js/plugins.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/plugins.js"></script>
 
     <!-- custom scripts -->
-    <script src="vie-dark/js/scripts.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/scripts.js"></script>
 
 </body>
 

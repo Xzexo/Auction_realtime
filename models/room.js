@@ -22,6 +22,7 @@ let roomSchema = mongoose.Schema({
     auction_day:Date,
     user_id:String,
     item_id:String,
+    item_ad:String,
     status:String
 })
 

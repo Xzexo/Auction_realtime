@@ -22,7 +22,7 @@ let userSchema = mongoose.Schema({
     critizen_id:Number,
     email:String,
     passwd:String,
-    phone:Number,
+    phone:String,
     user_type:String,
     status:String
 });

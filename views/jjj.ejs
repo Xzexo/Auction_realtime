@@ -46,3 +46,28 @@ Room.find().exec((err, doc_room) => {
         })
     })
 })
+
+
+
+<div class="card">
+    <div class="message-box">
+        <ul class="list-group list-group-flush scroll-box "   id="message-list"></ul>
+        <div class="info black "></div>
+    </div>
+
+    <div class="card-footer">
+        <div class="input-group">
+            <input
+            type="text"
+            class="form-control"
+            id="message"
+            placeholder="Send new message"
+            />
+            <div class="input-group-append">
+                <button class="btn custom-button" type="button" id="messageBtn">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

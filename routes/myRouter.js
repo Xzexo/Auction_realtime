@@ -24,7 +24,7 @@ require('dotenv').config();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '.views/image/item')
+        cb(null, './public/image/item')
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + ".jpg")// change name file
@@ -44,14 +44,21 @@ router.get("/", (req, res) => {
 })
 
 //! User
-router.get('/user', (req, res) => {
-    Room.find().exec((err, doc) => {
-        res.render('users.ejs', { room: doc })
-    })
+router.get('/user/:id', (req, res) => {
+    const user_id = req.params.id;
+    User.findOne({_id: user_id}).exec((err, doc_user) =>{
+        Room.find().exec((err, doc) => {
+            res.render('users.ejs', { room: doc , user: doc_user })
+        })
+    });
 })
 
-router.get('/user_edit', (req, res) => {
-    res.render('user_edit.ejs')
+router.get('/user_edit/:id', (req, res) => {
+    const user_id = req.params.id
+    User.findOne({ _id: user_id }).exec((err, doc) => {
+        res.render('user_edit.ejs', { user: doc })
+        console.log("user :", user_id);
+    })
 })
 
 
@@ -62,46 +69,59 @@ router.post('/check', async (req, res) => {
     const user_name = req.body.username;
     const pass_wd = req.body.passwd;
 
-    if (authenticationSuccess(user_name, pass_wd)) {
+    //Find username and password in DB
 
-        if (user_name == process.env.USERNAME && pass_wd == process.env.PASS) {
-            const user = {
-                name: user_name
-            }
-            const token = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '1h' })
-            res.cookie('token', token, { httpOnly: true })
-            res.redirect('/admin')
+    const user = await findUser(user_name, pass_wd);
 
-        } else {
-            const userPayload = {
-                username: user_name,
-                password: pass_wd
-            }
 
-            const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
-            res.cookie('token', token, { httpOnly: true });
-
-            Room.find().exec((err, doc_room) => {
-                User.findOne({username: user_name, passwd: pass_wd}).exec((err, doc)=> {
-                    const user_id = doc._id;
-                    User.findById(user_id).exec((err,doc_user) =>{
-                        res.render('users.ejs', { room: doc_room, user:doc_user })
-                    })
-                })
-            })
+    if (user_name == process.env.USERNAME && pass_wd == process.env.PASS) {
+        const userPayload = {
+            name: user_name
         }
-    } else {
+        const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        res.cookie('token', token, { httpOnly: true })
+        res.redirect('/admin')
+
+    } else if (user) {
+        const userPayload = {
+            username: user_name,
+            password: pass_wd
+        }
+
+        const token = jwt.sign(userPayload, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.cookie('token', token, { httpOnly: true });
+
+        console.log("user :", user);
+        Room.find().exec((err, doc) => {
+            res.render('users.ejs', { room: doc, user: user }); //add user object
+        })
+
+    }
+    else {
         res.redirect('/login');
+
     }
 });
 
-function authenticationSuccess(username, password) {
-    const user =  User.findOne({
-        username: username,
-        password: password
-    });
-    return user != null;
+async function findUser(username, passwd) {
+    try {
+        // Find user in the database
+        let user = await User.findOne({ username: username, passwd: passwd });
+
+        if (user) {
+            // If user is found, return user data
+            return user;
+        } else {
+            // If no user is found, return an error message
+            throw new Error("User not found.");
+        }
+    } catch (error) {
+        // If there's an error, throw the error
+        throw error;
+    }
 }
+
 
 function authenticate(req, res, next) {
     const token = req.cookies.token
@@ -132,12 +152,16 @@ router.get('/register', (req, res) => {
 
 //! Admin
 router.get('/admin', authenticate, (req, res) => {
-    console.log(authenticate);
-
     Room.find().exec((err, doc) => {
-    console.log("doc : ",doc);
-        
-        res.render('admin.ejs', { room: doc })
+        if (err) {
+            console.error(err);
+            res.status(500).send(err);
+        } else {
+            // console.log("doc : ",doc);
+            console.log("userInfo : ", req.user); // assuming that authenticate middleware adds user info to req.user
+
+            res.render('admin.ejs', { room: doc, userInfo: req.user })
+        }
     })
 })
 
@@ -148,10 +172,6 @@ router.get('/admin_add', (req, res) => {
 
 
 //! Feature
-router.get("/user", (req, res) => {
-    res.render('users.ejs')
-})
-
 router.get("/history", (req, res) => {
     res.render('history.ejs')
 })
@@ -160,22 +180,67 @@ router.get("/history_check", (req, res) => {
     res.render('history_check.ejs')
 })
 
-router.get("/register_item", (req, res) => {
-    res.render('register_item.ejs')
+router.get("/register_item/:id", (req, res) => {
+    const user_id = req.params.id;
+    res.render('register_item.ejs', {user_id})
+    console.log(user_id)
 })
 
-router.get("/room", (req, res) => {
-    Room.find().exec((err, doc) => {
-        res.render('room.ejs', { room: doc })
+router.get("/room/:id", (req, res) => {
+    const user_id = req.params.id;
+    Item.find().exec((err, doc_item) => {
+        User.findOne({_id: user_id}).exec((err, doc_user) =>{
+            Room.find().exec((err, doc) => {
+                res.render('room.ejs', { room: doc , user: doc_user, item: doc_item})
+            })
+        })
     })
+    console.log(user_id)
 })
 
-router.get('/auction', (req, res) => {
-    res.render('auction.ejs')
+router.get("/book_room/:user_id/:room_id", (req, res) => {
+    const user_id = req.params.user_id
+    const room_id = req.params.room_id
+    Item.find({user_id: user_id}).exec((err, doc_item) =>{
+        User.findOne({_id: user_id}).exec((err, doc_user) =>{
+            Room.findOne({_id: room_id}).exec((err, doc) => {
+                res.render('book_room.ejs', { room: doc , user: doc_user , item: doc_item})
+            })
+        })
+    });
+})
+
+router.get('/item/:user_id/:room_id', (req, res) => {
+    const user_id = req.params.user_id
+    const room_id = req.params.room_id
+    Item.findOne({room_id: room_id}).exec((err, doc_item) =>{
+        User.findOne({_id: user_id}).exec((err, doc_user) =>{
+            Room.findOne({_id: room_id}).exec((err, doc) => {
+                res.render('item.ejs', { room: doc , user: doc_user , item: doc_item})
+            })
+        })
+    });
+})
+
+router.get('/auction/:user_id/:room_id/:item_id', (req, res) => {
+    const user_id = req.params.user_id
+    const room_id = req.params.room_id
+    const item_id = req.params.item_id
+    Item.findOne({room_id: room_id}).exec((err, doc_item) =>{
+        User.findOne({_id: user_id}).exec((err, doc_user) =>{
+            Room.findOne({_id: room_id}).exec((err, doc) => {
+                res.render('auction.ejs', { room: doc , user: doc_user , item: doc_item})
+            })
+        })
+    });
 })
 
 router.get('/payment', (req, res) => {
     res.render('payment.ejs')
+})
+
+router.get('/testchat', (req, res) => {
+    res.render('Testchat.ejs')
 })
 
 
@@ -201,23 +266,41 @@ router.post('/register_db', (req, res) => {
     })
 })
 
+router.post('/edit_user', (req, res) => {
+    const user_id = req.body.user_id
+    let data = {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.Email,
+        phone: req.body.Phone
+    }
+    console.log(data)
+    Room.findByIdAndUpdate(reserve_id, data, { useFindAndModify: false }).exec(err => {
+        res.redirect('/user')
+    })
+})
 
-router.post('/register_item_db', (req, res) => {
+
+router.post('/register_item_db',upload.single("item_pic"),(req, res) => {
     console.log(req.body);
+    console.log(req.file);
+    const state_item = 0
     let data = new Item({
         item_name: req.body.item_name,
         item_description: req.body.item_descrip,
         item_begin_price: req.body.begin_price,
         item_minimum_bid: req.body.min_bid,
         item_minimum_sell: req.body.min_sell,
-        item_pic: req.body.item_pic,
+        item_pic: req.file.filename,
         item_defect: req.body.scar_descrip,
         item_defect_pic: req.body.scar_pic,
-        user_id: req.body.user_id
+        user_id: req.body.user_id,
+        status: state_item
     })
+    const user_ID = req.body.user_id
     Item.saveItem(data, (err) => {
         if (err) console.log(err)
-        res.redirect('/register_item')
+        res.redirect('/user/'+user_ID)
     })
 })
 
@@ -240,18 +323,30 @@ router.post('/open_room_db', (req, res) => {
 
 router.post('/edit_room', (req, res) => {
     const reserve_id = req.body.reserve_id
+    const item_ID = req.body.item_id
+    const state_room = 1
     let data = {
         time_open: req.body.time_open,
         time_close_door: req.body.time_close_door,
         time_finish: req.body.time_finish,
-        auction_day: req.body.auction_day
+        auction_day: req.body.auction_day,
+        item_id: req.body.item_id,
+        user_id: req.body.user_id,
+        item_ad: req.body.item_ad,
+        status:state_room
     }
-    Room.findByIdAndUpdate(reserve_id, data, { useFindAndModify: false }).exec(err => {
-        res.redirect('/room')
+    let data_i = {
+        room_id: req.body.reserve_id
+    }
+    const user_ID = req.body.user_id
+    Item.findByIdAndUpdate(item_ID, data_i,{ useFindAndModify: false } ).exec(err => {
+        Room.findByIdAndUpdate(reserve_id, data, { useFindAndModify: false }).exec(err => {
+            res.redirect('/room/'+user_ID)
+        })
     })
 })
 
-
+//! OH
 // get room by id
 router.get('/room/:id', (req, res) => {
     const roomId = req.params.id;
@@ -495,12 +590,49 @@ router.get('/users', async (req, res) => {
 
 
 
+// get user by Id
+router.get('/users/:id', (req, res) => {
+    const userId = req.params.id;
+    User.findById(userId, (err, user) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        res.json(user);
+    });
+});
+
+
+// find user by username and password
+router.post('/findUser', async (req, res) => {
+    const { username, passwd } = req.body;
+
+    console.log("AAAAAAAAAA");
+    try {
+        // Find user in the database
+        let user = await User.findOne({ username: username, passwd: passwd });
+
+        if (user) {
+            // If user is found, return user data
+            res.status(200).json(user);
+            console.log("This User : ", user);
+
+
+        } else {
+            // If no user is found, return an error message
+            res.status(404).json({ message: "User not found." });
+        }
+    } catch (error) {
+        // If there's an error, return an error message
+        res.status(500).json({ message: "Error occurred.", error: error.message });
+    }
+
+});
+
 
 module.exports = router
 
-router.get("/:id", (req, res) => {
-    const room_id = req.params.id
-    Room.findOne({ _id: room_id }).exec((err, doc) => {
-        res.render('book_room.ejs', { room: doc })
-    })
-})

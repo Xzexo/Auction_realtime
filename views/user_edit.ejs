@@ -15,7 +15,7 @@
     <title>Bidlersegde</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="vie-dark/img/auc_icon.png" />
+    <link rel="shortcut icon" href="http://localhost:3030/vie-dark/img/auc_icon.png" />
 
      <!-- Google Fonts -->
      <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
@@ -26,10 +26,10 @@
 
 
     <!-- Plugins -->
-    <link rel="stylesheet" href="vie-dark/css/plugins.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/plugins.css" />
 
     <!-- Core Style Css -->
-    <link rel="stylesheet" href="vie-dark/css/style.css" />
+    <link rel="stylesheet" href="http://localhost:3030/vie-dark/css/style.css" />
 
 
 </head>
@@ -73,7 +73,7 @@
 
             <!-- Logo -->
             <a class="logo" href="/user">
-                <img src="vie-dark/img/user.png" alt="Profile">
+                <img src="http://localhost:3030/vie-dark/img/user.png" alt="Profile">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -111,7 +111,7 @@
 		<div class="row">
 			<div class="col-lg-4 valign">
 				<div class="img">
-					<img src="vie-dark/img/user.png" >
+					<img src="http://localhost:3030/vie-dark/img/user.png" >
 					<div class="row">
 						<div class="col-12">
 							<div class="text-center">
@@ -124,43 +124,44 @@
 
 			<div class="col-lg-8 valign">
 
-				<section class="contact-sec style2 section-padding position-re bg-img" data-background="vie-dark/img/patrn1.png" data-scroll-index="7">
+				<section class="contact-sec style2 section-padding position-re bg-img" data-background="http://localhost:3030/vie-dark/img/patrn1.png" data-scroll-index="7">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-10">
 
 								<div class="form wow fadeInUp" data-wow-delay=".5s">
 
-									<form  method="post" action="/">
+									<form  method="post" action="/edit_user">
 			
 										<div class="controls">
 
                                             <div class="row">
+                                                <input id="user_id" type="hidden" name="user_id" value="<%=user._id%>"">
 												<div class="col-lg-12">
 													<div class="form-group">
 														<h6>First Name</h6>
-														<input id="first_name" type="text" name="first_name" placeholder="First Name""
+														<input id="first_name" type="text" name="first_name" value="<%=user.first_name%>""
 														>
 													</div>
 												</div>
 												<div class="col-lg-12">
 													<div class="form-group">
 														<h6>Last Name</h6>
-														<input id="last_name" type="text" name="last_name" placeholder="Last Name""
+														<input id="last_name" type="text" name="last_name" value="<%=user.last_name%>""
 														>
 													</div>
 												</div>
 												<div class="col-lg-12">
 													<div class="form-group">
 														<h6>Email</h6>
-														<input id="Email" type="text" name="Email" placeholder="Email"
+														<input id="Email" type="text" name="Email" value="<%=user.email%>"
 														>
 													</div>
 												</div>
 												<div class="col-lg-12">
 													<div class="form-group">
 														<h6>Phone</h6>
-														<input id="Phone" type="tel" name="Phone" placeholder="Phone"
+														<input id="Phone" type="tel" name="Phone" value="<%=user.phone%>"
 															>
 													</div>
 													<div class="col-12">
@@ -198,14 +199,14 @@
 
 
     <!-- jQuery -->
-    <script src="vie-dark/js/jquery-3.0.0.min.js"></script>
-    <script src="vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-3.0.0.min.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/jquery-migrate-3.0.0.min.js"></script>
 
     <!-- plugins -->
-    <script src="vie-dark/js/plugins.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/plugins.js"></script>
 
     <!-- custom scripts -->
-    <script src="vie-dark/js/scripts.js"></script>
+    <script src="http://localhost:3030/vie-dark/js/scripts.js"></script>
 
 </body>
 
